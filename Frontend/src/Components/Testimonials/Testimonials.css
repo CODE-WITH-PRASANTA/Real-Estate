@@ -1,0 +1,179 @@
+/* Testimonials Section */
+.testimonials-section {
+    text-align: center;
+    padding: 60px 20px;
+    background-color: #f8fbff;
+}
+
+.testimonial-subtitle {
+    font-size: 14px;
+    font-weight: 600;
+    color: #4766ff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.testimonial-title {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #1d1d1d;
+}
+
+.testimonial-description {
+    font-size: 18px;
+    color: #6b7280;
+    max-width: 650px;
+    margin: 0 auto 50px;
+}
+
+/* Testimonial Card */
+.testimonial-card {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0px 12px 35px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+}
+
+blockquote {
+    font-size: 17px;
+    color: #333;
+    line-height: 1.8;
+    position: relative;
+    padding-left: 25px;
+    border-left: 4px solid #4766ff;
+}
+
+.quote {
+    font-size: 50px;
+    color: #4766ff;
+    font-weight: bolder;
+}
+
+/* Testimonial Footer */
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.testimonial-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 3px solid #4766ff;
+}
+
+.testimonial-info h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 3px;
+}
+
+.testimonial-position {
+    font-size: 15px;
+    color: #6b7280;
+}
+
+.stars {
+    color: #f4b400;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* Slick Dots Customization */
+.slick-dots {
+    position: absolute;
+    bottom: -40px;
+    display: flex !important;
+    justify-content: center;
+    list-style: none;
+}
+
+.slick-dots li {
+    margin: 0 5px;
+}
+
+/* Slick Carousel Customization */
+.slick-slider {
+    max-width: 85%;
+    margin: 0 auto;
+}
+
+.slick-slide {
+    padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .testimonial-title {
+        font-size: 32px;
+    }
+
+    .testimonial-description {
+        font-size: 16px;
+    }
+
+    .testimonial-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-section {
+        padding: 60px 15px;
+    }
+
+    .testimonial-title {
+        font-size: 28px;
+    }
+
+    .testimonial-description {
+        font-size: 15px;
+        max-width: 90%;
+    }
+
+    .testimonial-card {
+        padding: 25px;
+    }
+
+    .testimonial-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .testimonial-info h4 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-title {
+        font-size: 24px;
+    }
+
+    .testimonial-description {
+        font-size: 14px;
+        max-width: 100%;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+    }
+
+    .testimonial-footer {
+        text-align: center;
+    }
+
+    .testimonial-image {
+        margin-bottom: 10px;
+    }
+}

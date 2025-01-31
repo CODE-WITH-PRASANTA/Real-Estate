@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Add to your App.css file */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6); /* Lighter semi-transparent background */
+    backdrop-filter: blur(8px); /* Subtle blur effect */
+    z-index: 9999; /* Ensures loader stays on top */
+    animation: fadeIn 0.5s ease-out;
+  }
+  
+  /* Add smooth fade-in effect */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Optional: Apply subtle shadow to loader for depth */
+  .loader .react-spinner {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: spinLoader 1.5s infinite ease-in-out; /* Smooth continuous spinning animation */
+  }
+  
+  /* Spin animation for the loader */
+  @keyframes spinLoader {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Optional: Loader container styling */
+  .loader > .react-spinner {
+    transition: transform 0.3s ease-in-out;
+  }
+  

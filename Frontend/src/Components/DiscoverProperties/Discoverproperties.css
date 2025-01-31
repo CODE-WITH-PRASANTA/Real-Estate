@@ -1,0 +1,307 @@
+/* Discoverproperties.css - Updated for Professional Look */
+.discover-properties {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.discover-section-title {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.category-buttons button {
+    padding: 12px 18px;
+    border: none;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.category-buttons button.active {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Smooth fade-in-up animation for category switch */
+.discover-properties-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.discover-property-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.discover-property-card:hover {
+    transform: scale(1.03);
+}
+
+.image-container {
+    position: relative;
+}
+
+.discover-property-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.tags-container {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    display: flex;
+    gap: 6px;
+}
+
+.tag {
+    background-color: rgba(0, 123, 255, 0.85);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.tag.for-sale {
+    background-color: rgba(100, 100, 100, 0.85);
+}
+
+/* Move location to bottom left of the image */
+.property-location {
+    position: absolute;
+    bottom: 160px;
+    left: 12px;
+    font-size: 14px;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 5px 10px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.property-location .location-icon {
+    color: #ffcc00;
+}
+
+.discover-property-info {
+    padding: 18px;
+}
+
+.property-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.property-details {
+    font-size: 14px;
+    color: gray;
+    display: flex;
+    gap: 12px;
+}
+
+.property-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 2px dashed #ccc;
+}
+
+.seller-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.seller-profile-pic {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.seller-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+.view-all {
+    margin-top: 25px;
+    padding: 12px 24px;
+    border: 2px dashed #007bff;
+    background-color: white;
+    color: #007bff;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.view-all:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* ========= RESPONSIVENESS ADDED BELOW ========= */
+
+/* Tablet View (max-width: 992px) */
+@media (max-width: 992px) {
+    .discover-properties-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for tablet */
+    }
+    
+    .category-buttons {
+        flex-wrap: wrap; /* Allow buttons to wrap properly */
+        gap: 10px;
+    }
+
+    .category-buttons button {
+        font-size: 13px;
+        padding: 10px 14px;
+    }
+
+    .discover-section-title {
+        font-size: 24px;
+    }
+
+    .property-title {
+        font-size: 18px;
+    }
+    
+    .price {
+        font-size: 18px;
+    }
+}
+
+/* Mobile View (max-width: 768px) */
+@media (max-width: 768px) {
+    .discover-properties-grid {
+        grid-template-columns: 1fr; /* 1 column for mobile */
+    }
+
+    .category-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .category-buttons button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .discover-property-card {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .property-title {
+        font-size: 17px;
+    }
+
+    .property-details {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 16px;
+    }
+
+    .view-all {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+}
+
+/* Small Mobile View (max-width: 480px) */
+@media (max-width: 480px) {
+    .discover-properties {
+        padding: 10px;
+    }
+
+    .discover-section-title {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .category-buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .category-buttons button {
+        font-size: 10px;
+        padding: 6px 10px;
+    }
+
+    .discover-property-card {
+        padding: 10px;
+    }
+
+    .property-title {
+        font-size: 16px;
+    }
+
+    .property-details {
+        font-size: 11px;
+    }
+
+    .price {
+        font-size: 15px;
+    }
+
+    .view-all {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
