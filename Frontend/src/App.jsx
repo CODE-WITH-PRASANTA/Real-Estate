@@ -5,6 +5,8 @@ import Home from "./Pages/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import { HashLoader    } from "react-spinners";
 import Footer from "./Components/Footer/Footer";
+import ContactUs from "./Pages/ContactUs/ContactUs";
+import Faqpage from "./Pages/FaqPage/FaqPage";
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -27,6 +29,8 @@ function App() {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<ContactUs />}/>
+            <Route path="/faq" element={<Faqpage />}/>
           </Routes>
           <Footer />
         </>

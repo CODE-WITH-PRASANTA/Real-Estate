@@ -1,0 +1,89 @@
+/* ContactFaq.css */
+.contact-faq{
+    background: #dfe6e9;
+    padding: 20px;
+}
+.contact-faq-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .contact-faq-title {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 25px;
+  }
+  
+  .contact-faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .contact-faq-item {
+    background: #ecf0f1;
+    border-radius: 8px;
+    padding: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #bdc3c7;
+  }
+  
+  .contact-faq-item:hover {
+    background: #dfe6e9;
+  }
+  
+  .contact-faq-item.open {
+    color: #000000;
+    border: none;
+  }
+  
+  .contact-faq-question {
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .contact-faq-toggle {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .contact-faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.4s ease-in-out;
+    font-size: 17px;
+    color: #2c3e50;
+  }
+  
+  .contact-faq-item.open .contact-faq-answer {
+    opacity: 1;
+    max-height: 250px;
+    padding-top: 12px;
+  }
+  
+  @media (max-width: 768px) {
+    .contact-faq-container {
+      padding: 15px;
+    }
+    .contact-faq-title {
+      font-size: 26px;
+    }
+    .contact-faq-question {
+      font-size: 18px;
+    }
+    .contact-faq-answer {
+      font-size: 16px;
+    }
+  }

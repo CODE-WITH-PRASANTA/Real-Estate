@@ -31,7 +31,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
           <li>
-            <a href="#">
+            <a href="/">
               <FiHome className="nav-icon" /> Home
             </a>
           </li>
@@ -61,12 +61,12 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/faq">
               <FiHelpCircle className="nav-icon" /> FAQ
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/contact">
               <FiPhone className="nav-icon" /> Contact Us
             </a>
           </li>
@@ -122,19 +122,19 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/faq">
               <FiHelpCircle className="nav-icon" /> FAQ
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/contact">
               <FiPhone className="nav-icon" /> Contact Us
             </a>
           </li>
           <li>
-            <button className="sign-in">
-              <FiUsers className="button-icon" /> Sign In
-            </button>
+          <button className="sign-in">
+            <FiUsers className="button-icon" /> Agent Login
+          </button>
           </li>
           <li>
             <button className="submit-property">

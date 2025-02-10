@@ -1,0 +1,50 @@
+.map-container {
+    width: 100%;
+    height: 500px; /* Adjusted height for better visibility */
+    border-radius: 12px; /* Slightly more rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Increased shadow for a softer look */
+    border: 2px solid #f0f0f0; /* Light border for definition */
+    position: relative;
+    background-color: #fff; /* Ensures the background stays white */
+    margin: 20px 0; /* Adds space above and below */
+  }
+  
+  /* Add a gradient background on hover for the map container */
+  .map-container:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15); /* Slightly darker shadow on hover */
+  }
+  
+  /* Popup styling */
+  .leaflet-popup-content {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .leaflet-popup-content strong {
+    color: #E94e77; /* Matches the section heading color */
+  }
+  
+  .leaflet-popup-tip-container {
+    display: none; /* Hide the popup triangle */
+  }
+  
+  /* Marker styling */
+  .leaflet-marker-icon {
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow around markers */
+  }
+  
+  /* Add some padding for the map */
+  .react-leaflet-container {
+    padding: 10px;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .map-container {
+      height: 300px; /* Decrease height on smaller screens */
+    }
+  }
+  

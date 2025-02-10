@@ -1,0 +1,189 @@
+/* Main Section */
+.contact-partner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: #ffffff;
+  }
+  
+  /* Main Box */
+  .contact-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f5f8fc;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Content Section */
+  .contact-content {
+    max-width: 50%;
+    text-align: left;
+  }
+  
+  .contact-tagline {
+    font-size: 13px;
+    color: #1a73e8;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .partner-contact-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #000000;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+  
+  .contact-description {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  /* Call to Action Button */
+  .contact-cta-button {
+    margin: auto;
+    background: #1a73e8;
+    color: white;
+    padding: 14px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .contact-cta-button:hover {
+    background: #0c5dc0;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(26, 115, 232, 0.3);
+  }
+  
+  .contact-cta-button span {
+    font-size: 20px;
+  }
+  
+  /* Image Section */
+  .contact-image-container {
+    max-width: 45%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .contact-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .contact-box {
+      flex-direction: column;
+      padding: 30px;
+      text-align: center;
+    }
+  
+    .contact-content {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .contact-image-container {
+      max-width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  /* Responsive Design */
+@media (max-width: 1024px) {
+    .contact-box {
+      flex-direction: column;
+      padding: 30px;
+      text-align: center;
+    }
+  
+    .contact-content {
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .contact-image-container {
+      max-width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .partner-contact-title {
+      font-size: 24px;
+    }
+  
+    .contact-description {
+      font-size: 14px;
+    }
+  
+    .contact-cta-button {
+        margin: auto;
+      font-size: 16px;
+      padding: 12px 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .contact-box {
+      padding: 20px;
+    }
+  
+    .partner-contact-title {
+      font-size: 22px;
+    }
+  
+    .contact-description {
+      font-size: 13px;
+    }
+  
+    .contact-cta-button {
+      font-size: 14px;
+      padding: 10px 18px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .partner-contact-title {
+      font-size: 20px;
+    }
+  
+    .contact-description {
+      font-size: 12px;
+    }
+  
+    .contact-cta-button {
+      font-size: 13px;
+      padding: 8px 16px;
+    }
+  }
+  
+  
