@@ -1,0 +1,77 @@
+.contact-container {
+    width: 100%;
+    max-width: 1400px;
+    height: 250px; /* Default height */
+    background-image: url('../../assets/Blog-bg-header.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 30px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 0 20px;
+  }
+  
+  /* Dark overlay effect */
+  .contact-overlay {
+    content: "";
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4); /* Increased opacity for better readability */
+    inset: 0px;
+  }
+  
+  /* Content styling */
+  .contact-content {
+    position: relative;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    max-width: 90%;
+  }
+  
+  .breadcrumb {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .contact-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) { /* Tablet View */
+    .contact-container {
+      height: 200px;
+      padding: 0 15px;
+    }
+  
+    .breadcrumb {
+      font-size: 12px;
+    }
+  
+    .contact-title {
+      font-size: 30px;
+    }
+  }
+  
+  @media (max-width: 768px) { /* Mobile View */
+   
+  
+    .breadcrumb {
+      font-size: 11px;
+    }
+  
+    .contact-title {
+      font-size: 26px;
+    }
+  }
+  

@@ -56,7 +56,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/blog">
               <FiBookOpen className="nav-icon" /> Blog
             </a>
           </li>
@@ -92,7 +92,7 @@ const Navbar = () => {
       <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
         <ul>
           <li>
-            <a href="#">
+            <a href="/">
               <FiHome className="nav-icon" /> Home
             </a>
           </li>
@@ -117,7 +117,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/blog">
               <FiBookOpen className="nav-icon" /> Blog
             </a>
           </li>
