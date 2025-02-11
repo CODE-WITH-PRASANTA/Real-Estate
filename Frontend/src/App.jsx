@@ -11,6 +11,7 @@ import ContactUs from "./Pages/ContactUs/ContactUs";
 import FaqPage from "./Pages/FaqPage/FaqPage";
 import Blog from "./Pages/Blog/Blog";
 import BlogDetails from "./Components/BlogDetails/BlogDetails";
+import AgentSubscription from "./Pages/AgentSubscription/AgentSubscription";
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -47,6 +48,7 @@ function App() {
                         <Route path="/faq" element={<FaqPage />} />
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/blog/:id" element={<BlogDetails />} />
+                        <Route path="/agent" element={<AgentSubscription />}/>
                     </Routes>
                     <Footer />
                 </>

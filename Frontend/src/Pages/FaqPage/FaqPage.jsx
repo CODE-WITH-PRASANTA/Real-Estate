@@ -5,11 +5,11 @@ import FaqQuestion from '../../Components/FaqQuestion/FaqQuestion';
 const Faqpage = () => {
   return (
     <>
-    <div className="contact-container">
-      <div className="contact-overlay"></div>
-      <div className="contact-content">
+    <div className="faq-container">
+      <div className="faq-overlay"></div>
+      <div className="faq-content">
         <p className="breadcrumb">Home / Pages / Faq</p>
-        <h1 className="contact-title">Frequently Asked Questions</h1>
+        <h1 className="faq-title">Frequently Asked Questions</h1>
       </div>
     </div>
     <FaqQuestion />

@@ -51,7 +51,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/agent">
               <FiUsers className="nav-icon" /> Agent Subscription
             </a>
           </li>
@@ -112,7 +112,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/agent">
               <FiUsers className="nav-icon" /> Agent Subscription
             </a>
           </li>

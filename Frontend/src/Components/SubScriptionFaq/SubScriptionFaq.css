@@ -1,0 +1,118 @@
+/* General Styles */
+.subscription-faq-section {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.subscription-faq-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+}
+
+/* FAQ Container */
+.subscription-faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* FAQ Item */
+.subscription-faq-item {
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #ddd;
+}
+
+.subscription-faq-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    transition: background 0.3s ease-in-out;
+}
+
+.subscription-faq-question:hover {
+    background: #f0f0f0;
+}
+
+/* Open/Close Icon */
+.subscription-faq-icon {
+    font-size: 22px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+/* Smooth Slide Down Animation */
+.subscription-faq-answer-wrapper {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+
+.subscription-faq-item.open .subscription-faq-answer-wrapper {
+    max-height: 500px; /* Adjust based on content */
+    opacity: 1;
+}
+
+.subscription-faq-answer {
+    padding: 15px 24px;
+    font-size: 16px;
+    color: #555;
+    text-align: left;
+    background: #f9f9f9;
+    border-top: 1px solid #eee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .subscription-faq-section {
+        padding: 30px 15px;
+    }
+
+    .subscription-faq-title {
+        font-size: 24px;
+    }
+
+    .subscription-faq-question {
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+
+    .subscription-faq-answer {
+        font-size: 14px;
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .subscription-faq-title {
+        font-size: 22px;
+    }
+
+    .subscription-faq-question {
+        font-size: 14px;
+        padding: 12px 18px;
+    }
+
+    .subscription-faq-answer {
+        font-size: 13px;
+        padding: 10px 18px;
+    }
+}

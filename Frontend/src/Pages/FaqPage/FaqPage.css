@@ -1,4 +1,4 @@
-.contact-container {
+.faq-container {
   width: 100%;
   max-width: 1400px;
   height: 250px; /* Default height */
@@ -17,7 +17,7 @@
 }
 
 /* Dark overlay effect */
-.contact-overlay {
+.faq-overlay {
   content: "";
   position: absolute;
   background-color: rgba(0, 0, 0, 0.4); /* Increased opacity for better readability */
@@ -25,7 +25,7 @@
 }
 
 /* Content styling */
-.contact-content {
+.faq-content {
   position: relative;
   text-align: center;
   color: white;
@@ -41,7 +41,7 @@
   letter-spacing: 1px;
 }
 
-.contact-title {
+.faq-title {
   font-size: 36px;
   font-weight: bold;
   text-transform: uppercase;
@@ -49,7 +49,7 @@
 
 /* Responsive Design */
 @media (max-width: 1024px) { /* Tablet View */
-  .contact-container {
+  .faq-container {
     height: 200px;
     padding: 0 15px;
   }
@@ -58,7 +58,7 @@
     font-size: 12px;
   }
 
-  .contact-title {
+  .faq-title {
     font-size: 30px;
   }
 }
@@ -70,7 +70,7 @@
     font-size: 11px;
   }
 
-  .contact-title {
+  .faq-title {
     font-size: 26px;
   }
 }

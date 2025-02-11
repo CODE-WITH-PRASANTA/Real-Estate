@@ -1,0 +1,225 @@
+/* Inquiry Section - Professional Styling */
+.enquiry-section {
+    width: 100%;
+    min-height: 65vh;
+    background: url('../../assets/main-home-img-3.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 4rem 2rem;
+    margin-bottom: 50px;
+  }
+  
+  /* Dark Overlay for Better Readability */
+  .enquiry-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Improved opacity */
+    z-index: 1;
+  }
+  
+  /* Wrapper for Content */
+  .enquiry-overlay {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  /* Left Side - Content */
+  .enquiry-content {
+    color: white;
+    max-width: 500px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .enquiry-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: fadeInUp 0.8s ease-in-out;
+  }
+  
+  .enquiry-content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease-in-out;
+  }
+  
+  /* Right Side - Form */
+  .enquiry-form {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 12px;
+    max-width: 420px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .enquiry-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .enquiry-form h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: #333;
+  }
+  
+  .enquiry-form p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Form Inputs */
+  .enquiry-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .enquiry-form input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .enquiry-form input:focus {
+    border: 2px solid #ff5722;
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.3);
+  }
+  
+  /* Button Styling */
+  .enquiry-form button {
+    background: #ff5722;
+    color: white;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .enquiry-form button:hover {
+    background: #e64a19;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(230, 74, 25, 0.4);
+  }
+  
+  /* Animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .enquiry-section {
+      padding: 0px;
+      min-height: auto;
+    }
+  
+    .enquiry-overlay {
+        padding: 0px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+      flex-direction: column;
+      text-align: center;
+      gap: 3rem;
+    }
+  
+    .enquiry-content {
+      max-width: 100%;
+    }
+  
+    .enquiry-content h2 {
+      font-size: 2.5rem;
+    }
+  
+    .enquiry-form {
+      width: 100%;
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .enquiry-content h2 {
+      font-size: 2rem;
+    }
+  
+    .enquiry-content p {
+      font-size: 1rem;
+    }
+  
+    .enquiry-form h3 {
+      font-size: 1.5rem;
+    }
+  
+    .enquiry-form p {
+      font-size: 0.9rem;
+    }
+  
+    .enquiry-form input,
+    .enquiry-form button {
+      font-size: 1rem;
+      padding: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .enquiry-content h2 {
+      font-size: 1.8rem;
+    }
+  
+    .enquiry-content p {
+      font-size: 0.9rem;
+    }
+  
+    .enquiry-form {
+      padding: 1.5rem;
+    }
+  
+    .enquiry-form h3 {
+      font-size: 1.4rem;
+    }
+  
+    .enquiry-form p {
+      font-size: 0.85rem;
+    }
+  
+    .enquiry-form input,
+    .enquiry-form button {
+      font-size: 0.95rem;
+      padding: 0.8rem;
+    }
+  }
+  
