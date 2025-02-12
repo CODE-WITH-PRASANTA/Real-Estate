@@ -1,0 +1,542 @@
+/* General Container */
+.filter-container {
+    text-align: center;
+    max-width: 1700px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    font-family: 'Roboto', sans-serif;
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+    margin-bottom: 50px;
+}
+
+/* Heading */
+.filter-heading {
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 700;
+    color: #222;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    border-bottom: 2px solid #ff9800;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Top Filter Bar */
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Dropdowns */
+.filter-select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 220px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    color: #555;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.filter-select:hover, .filter-select:focus {
+    border-color: #ff9800;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Filter Toggle Button */
+.filter-toggle {
+    background-color: #ff9800;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-toggle:hover {
+    background-color: #e57a00;
+    transform: scale(1.05);
+}
+
+/* Expandable Filter Section */
+.filter-options {
+    margin-top: 30px;
+    max-width: 1400px;
+    margin: auto;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-in-out, padding 0.3s ease-in-out;
+    padding: 0 30px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+.filter-options.open {
+    max-height: 1000px;
+    padding: 20px 30px;
+}
+/* Bedroom, Bathroom, and Area Section */
+.filter-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Each Filter Item */
+.filter-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    width: 200px;
+}
+
+/* Filter Labels */
+.filter-section label {
+    font-weight: 600;
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+/* Input Fields */
+.filter-section input {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 100%;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: #f9f9f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-family: 'Roboto', sans-serif;
+    color: #444;
+}
+
+/* Input Focus and Hover Effects */
+.filter-section input:hover,
+.filter-section input:focus {
+    border-color: #ff9800;
+    background-color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(255, 152, 0, 0.5);
+}
+
+/* Placeholder Style */
+.filter-section input::placeholder {
+    font-style: italic;
+    color: #999;
+}
+
+/* Input Number Arrows Disable */
+.filter-section input[type="number"]::-webkit-inner-spin-button,
+.filter-section input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.filter-section input[type="number"] {
+    -moz-appearance: textfield; /* Disable arrows in Firefox */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .filter-item {
+        width: 100%;
+    }
+
+    .filter-section {
+        padding: 15px;
+        gap: 15px;
+    }
+}
+/* Price Range Section */
+.filter-price {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    padding: 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.price-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Filter Item Wrapper */
+.qodef-e-filter-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 600px;
+}
+
+.qodef-e-filter-item-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.qodef-e-price-heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: #444;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Range Slider Wrapper */
+.qodef-e-price-range-slider-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+
+/* Range Slider Styling */
+.price-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #ff9800, #ddd);
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s ease;
+    position: relative;
+}
+
+.price-slider:hover {
+    background: linear-gradient(to right, #ff9800, #fff);
+}
+
+/* Slider Thumb */
+.price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #ff9800;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.price-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: #ff9800;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Hidden Inputs */
+input[type="hidden"] {
+    display: none;
+}
+
+
+/* Filter Section */
+.filter-section-checkbox {
+    margin: auto;
+    width: 100%;
+    max-width: 1000px;
+    background: #ffffff;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Header */
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f3f3f3;
+    padding-bottom: 10px;
+}
+
+.filter-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* Reset Icon */
+.filter-reset {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #ff9800;
+    font-size: 22px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.filter-reset:hover .reset-icon {
+    transform: rotate(360deg);
+    color: #e57a00;
+}
+
+/* Checkboxes Section */
+.filter-checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.filter-checkboxes label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    color: #555;
+    transition: color 0.3s ease, transform 0.2s ease;
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.filter-checkboxes label:hover {
+    color: #333;
+    transform: scale(1.02);
+    background-color: #f1f1f1;
+}
+
+.filter-checkboxes input {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #ff9800; /* Modern browsers support */
+}
+
+/* Search Button */
+.filter-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.filter-search {
+    background-color: #ff9800;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-search:hover {
+    background-color: #e57a00;
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .filter-section {
+        padding: 15px 20px;
+    }
+
+    .filter-title {
+        font-size: 18px;
+    }
+
+    .filter-search {
+        font-size: 14px;
+        padding: 12px 30px;
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-checkboxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-search {
+        width: 100%;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-options.open {
+        max-height: 1000px;
+        padding: 20px 15px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .filter-container {
+        padding: 25px;
+        margin-bottom: 40px;
+    }
+
+    .filter-heading {
+        font-size: 28px;
+    }
+
+    .filter-select, 
+    .filter-section input {
+        font-size: 14px;
+        padding: 10px 12px;
+    }
+
+    .filter-toggle {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+
+    .filter-options {
+        padding: 15px 20px;
+    }
+
+    .filter-search {
+        padding: 14px 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-bar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .filter-heading {
+        font-size: 24px;
+    }
+
+    .filter-select,
+    .filter-section input {
+        width: 100%;
+    }
+
+    .filter-toggle {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .filter-options {
+        padding: 20px;
+    }
+
+    .filter-section {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .filter-item {
+        width: 100%;
+    }
+
+    .filter-checkboxes {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .filter-search {
+        width: 100%;
+        font-size: 14px;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .filter-container {
+        padding: 20px;
+    }
+
+    .filter-heading {
+        font-size: 22px;
+    }
+
+    .filter-bar {
+        gap: 10px;
+    }
+
+    .filter-toggle {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .filter-options {
+        padding: 15px;
+    }
+
+    .filter-section {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .filter-checkboxes label {
+        font-size: 14px;
+        padding: 5px 8px;
+    }
+
+    .filter-search {
+        font-size: 14px;
+        padding: 10px 25px;
+    }
+}

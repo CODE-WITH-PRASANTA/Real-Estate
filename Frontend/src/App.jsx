@@ -12,6 +12,8 @@ import FaqPage from "./Pages/FaqPage/FaqPage";
 import Blog from "./Pages/Blog/Blog";
 import BlogDetails from "./Components/BlogDetails/BlogDetails";
 import AgentSubscription from "./Pages/AgentSubscription/AgentSubscription";
+import About from "./Pages/About/About";
+import Properties from "./Pages/Properties/Properties";
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -49,6 +51,8 @@ function App() {
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/blog/:id" element={<BlogDetails />} />
                         <Route path="/agent" element={<AgentSubscription />}/>
+                        <Route path="/about" element={<About />}/>
+                        <Route path="/property" element={<Properties />}/>
                     </Routes>
                     <Footer />
                 </>

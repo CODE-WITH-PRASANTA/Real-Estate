@@ -36,12 +36,12 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/about">
               <FiInfo className="nav-icon" /> About Us
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/property">
               <FiHeart className="nav-icon" /> Properties
             </a>
           </li>
@@ -97,12 +97,12 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/about">
               <FiInfo className="nav-icon" /> About Us
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/property">
               <FiHeart className="nav-icon" /> Properties
             </a>
           </li>
