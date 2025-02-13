@@ -1,6 +1,7 @@
 import React from 'react'
 import './Properties.css'
 import FilterProperty from '../../Components/FliterProperty/FilterProperty'
+import PropertiesandOthers from '../../Components/PropertiesandOthers/PropertiesandOthers'
 
 const Properties = () => {
   return (
@@ -14,6 +15,7 @@ const Properties = () => {
     </div>
 
     <FilterProperty />
+    <PropertiesandOthers />
     </>
   )
 }
