@@ -74,12 +74,12 @@ const Navbar = () => {
 
         {/* Right Section */}
         <div className="nav-buttons">
-          <button className="sign-in">
+          <a href="/login" className="sign-in">
             <FiUsers className="button-icon" /> Agent Login
-          </button>
-          <button className="submit-property">
+          </a>
+          <a href="/submit" className="submit-property">
             <FiUpload className="button-icon" /> Submit Property
-          </button>
+          </a>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -132,14 +132,14 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-          <button className="sign-in">
-            <FiUsers className="button-icon" /> Agent Login
-          </button>
+            <a href="/login" className="sign-in">
+              <FiUsers className="button-icon" /> Agent Login
+            </a>
           </li>
           <li>
-            <button className="submit-property">
+            <a href="/submit" className="submit-property">
               <FiUpload className="button-icon" /> Submit Property
-            </button>
+            </a>
           </li>
         </ul>
       </div>

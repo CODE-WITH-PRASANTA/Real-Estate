@@ -14,6 +14,8 @@ import BlogDetails from "./Components/BlogDetails/BlogDetails";
 import AgentSubscription from "./Pages/AgentSubscription/AgentSubscription";
 import About from "./Pages/About/About";
 import Properties from "./Pages/Properties/Properties";
+import SignIn from "./Components/SignIn/SignIn";
+import SubmitProperty from "./Pages/SubmitProperty/SubmitProperty";
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -25,18 +27,19 @@ const ScrollToTop = () => {
     return null;
 };
 
-function App() {
+const App = () => {
     const [loading, setLoading] = useState(true);
+    const location = useLocation();
 
     useEffect(() => {
         setLoading(true);
         const timeout = setTimeout(() => setLoading(false), 2000);
         return () => clearTimeout(timeout);
-    }, []);
+    }, [location.pathname]);
 
     return (
-        <Router>
-            <ScrollToTop /> {/* Ensures every route change scrolls to the top */}
+        <div className="app">
+            <ScrollToTop />
             {loading ? (
                 <div className="loader">
                     <HashLoader size={55} color="#fb2a99" />
@@ -50,15 +53,24 @@ function App() {
                         <Route path="/faq" element={<FaqPage />} />
                         <Route path="/blog" element={<Blog />} />
                         <Route path="/blog/:id" element={<BlogDetails />} />
-                        <Route path="/agent" element={<AgentSubscription />}/>
-                        <Route path="/about" element={<About />}/>
-                        <Route path="/property" element={<Properties />}/>
+                        <Route path="/agent" element={<AgentSubscription />} />
+                        <Route path="/about" element={<About />} />
+                        <Route path="/property" element={<Properties />} />
+                        <Route path="/login" element={<SignIn />} />
+                        <Route path="/submit" element={<SubmitProperty />}/>
                     </Routes>
-                    <Footer />
+                    {/* Render Footer only if the current route is not "/login" */}
+                    {location.pathname !== "/login" && <Footer />}
                 </>
             )}
-        </Router>
+        </div>
     );
-}
+};
 
-export default App;
+const WrappedApp = () => (
+    <Router>
+        <App />
+    </Router>
+);
+
+export default WrappedApp;
