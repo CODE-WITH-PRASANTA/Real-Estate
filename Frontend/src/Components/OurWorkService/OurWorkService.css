@@ -1,0 +1,90 @@
+.our-work-service-container {
+    text-align: center;
+    padding: 4rem 2rem;
+    background-color: #f5f7fa; /* Softer background for a professional feel */
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .our-work-service-section-title {
+    font-size: 1.2rem;
+    color: #6c757d; /* Subtle gray color for secondary heading */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .our-work-service-main-heading {
+    font-size: 2.5rem;
+    color: #2d3436; /* Stronger contrast for the main heading */
+    font-weight: 700;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+  }
+  
+  .our-work-service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .our-work-service-card {
+    background: #ffffff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Cleaner, subtle shadow */
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 2rem;
+    max-width: 350px; /* Increased card width */
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+  }
+  
+  .our-work-service-card:hover {
+    transform: translateY(-15px); /* More prominent hover effect */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  }
+  
+  .our-work-service-image {
+    width: 120px; /* Slightly larger images */
+    height: auto;
+    margin: 0 auto 1.5rem;
+    transition: transform 0.3s ease;
+  }
+  
+  .our-work-service-card:hover .our-work-service-image {
+    transform: scale(1.1); /* Subtle zoom effect on the image */
+  }
+  
+  .our-work-service-title {
+    font-size: 1.5rem;
+    color: #2c3e50; /* Darker color for titles */
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .our-work-service-description {
+    font-size: 1rem;
+    color: #636e72; /* Softer gray for description */
+    line-height: 1.6;
+    margin-bottom: 2rem;
+  }
+  
+  .our-work-service-learn-more-btn {
+    background: #0056d2; /* Deep professional blue */
+    color: #ffffff;
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px; /* Rounded buttons for a modern look */
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 86, 210, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .our-work-service-learn-more-btn:hover {
+    background: #003e99; /* Slightly darker blue on hover */
+    box-shadow: 0 6px 15px rgba(0, 62, 153, 0.4);
+    transform: scale(1.05); /* Subtle scale-up on hover */
+  }
+  

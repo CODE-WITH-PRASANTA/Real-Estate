@@ -16,6 +16,8 @@ import About from "./Pages/About/About";
 import Properties from "./Pages/Properties/Properties";
 import SignIn from "./Components/SignIn/SignIn";
 import SubmitProperty from "./Pages/SubmitProperty/SubmitProperty";
+import AdminNavbar from "./AdminPannel/AdminNavbar/AdminNavbar";
+import OurService from "./Pages/OurService/OurService";
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -33,9 +35,12 @@ const App = () => {
 
     useEffect(() => {
         setLoading(true);
-        const timeout = setTimeout(() => setLoading(false), 2000);
+        const timeout = setTimeout(() => setLoading(false), 1500);
         return () => clearTimeout(timeout);
     }, [location.pathname]);
+
+    // Determine whether to hide Navbar and Footer
+    const isAdminRoute = location.pathname.startsWith("/admin");
 
     return (
         <div className="app">
@@ -46,7 +51,8 @@ const App = () => {
                 </div>
             ) : (
                 <>
-                    <Navbar />
+                    {/* Render Navbar only if not on an admin route */}
+                    {!isAdminRoute && <Navbar />}
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/contact" element={<ContactUs />} />
@@ -55,12 +61,14 @@ const App = () => {
                         <Route path="/blog/:id" element={<BlogDetails />} />
                         <Route path="/agent" element={<AgentSubscription />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/service" element={<OurService />}/>
                         <Route path="/property" element={<Properties />} />
                         <Route path="/login" element={<SignIn />} />
-                        <Route path="/submit" element={<SubmitProperty />}/>
+                        <Route path="/submit" element={<SubmitProperty />} />
+                        <Route path="/admin" element={<AdminNavbar />} />
                     </Routes>
-                    {/* Render Footer only if the current route is not "/login" */}
-                    {location.pathname !== "/login" && <Footer />}
+                    {/* Render Footer only if not on an admin route */}
+                    {!isAdminRoute && <Footer />}
                 </>
             )}
         </div>

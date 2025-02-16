@@ -1,0 +1,156 @@
+/* Container Styles */
+.owner-info-container {
+    padding: 80px;
+    margin-top: 20px;
+    margin: auto;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Title Styles */
+  .owner-info-title {
+    font-size: 2rem;
+    color: #e94e77;
+    text-align: center;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    border-bottom: 3px solid #e94e77;
+    padding-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+  }
+  
+  /* Section Styles */
+  .owner-info-section {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  /* Grid and Group Styles */
+  .owner-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+  }
+  
+  .owner-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .owner-info-group label {
+    font-weight: 600;
+    color: #444444;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+  }
+  
+  .owner-info-group input,
+  .owner-info-group textarea {
+    border: 2px solid #cccccc;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 1rem;
+    color: #333333;
+    outline: none;
+    background: #ffffff;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.09);
+  }
+  
+  /* Focus and Hover Effects */
+  .owner-info-group input:focus,
+  .owner-info-group textarea:focus {
+    border-color: #e94e77;
+    box-shadow: 0 0 8px rgba(233, 78, 119, 0.4);
+  }
+  
+  .owner-info-group input:hover,
+  .owner-info-group textarea:hover {
+    border-color: #007bff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Textarea Specific Styles */
+  .owner-info-address,
+  .owner-info-contact {
+    resize: none;
+    height: 100px;
+    overflow-y: auto;
+  }
+  
+  /* Placeholder Styling */
+  .owner-info-group input::placeholder,
+  .owner-info-group textarea::placeholder {
+    color: #999999;
+    font-style: italic;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.8;
+  }
+  
+  /* Buttons Section */
+  .owner-info-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .btn-save,
+  .btn-post {
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Save Button */
+  .btn-save {
+    background-color: #e94e77;
+    color: #ffffff;
+  }
+  
+  .btn-save:hover {
+    background-color: #d13e6b;
+    transform: translateY(-2px);
+  }
+  
+  /* Post Button */
+  .btn-post {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  .btn-post:hover {
+    background-color: #0056c7;
+    transform: translateY(-2px);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .owner-info-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .owner-info-container {
+      padding: 40px;
+    }
+  
+    .owner-info-buttons {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+  

@@ -46,7 +46,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href= "/service">
               <FiLayers className="nav-icon" /> Our Services
             </a>
           </li>
@@ -107,7 +107,7 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/service">
               <FiLayers className="nav-icon" /> Our Services
             </a>
           </li>

@@ -1,0 +1,156 @@
+/* Updated CSS File (DashboardSection.css) */
+.dashboard-section {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: space-between;
+    padding: 3rem 3rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .dashboard-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  .dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #eef5ff;
+    margin-right: 1.5rem;
+  }
+  
+  .icon {
+    font-size: 1.8rem;
+    color: #3b82f6;
+  }
+  
+  .text-container {
+    flex: 1;
+  }
+  
+  .label {
+    font-size: 1rem;
+    color: #6b7280;
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  .value {
+    font-size: 1.8rem;
+    color: #111827;
+    margin: 0.2rem 0 0;
+    font-weight: 700;
+    display: flex;
+    align-items: baseline;
+  }
+  
+  .extra {
+    font-size: 0.9rem;
+    color: #9ca3af;
+    margin-left: 0.5rem;
+  }
+
+  /* Responsive Styling */
+  @media (max-width: 1024px) {
+    .dashboard-section {
+      flex-direction: column;
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .dashboard-card {
+      padding: 1rem;
+    }
+
+    .icon-container {
+      width: 50px;
+      height: 50px;
+      margin-right: 1rem;
+    }
+
+    .icon {
+      font-size: 1.5rem;
+    }
+
+    .label {
+      font-size: 0.9rem;
+    }
+
+    .value {
+      font-size: 1.5rem;
+    }
+
+    .extra {
+      font-size: 0.8rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .dashboard-section {
+        margin-top: 30px;
+      padding: 1.5rem;
+    }
+
+    .dashboard-card {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    .icon-container {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    .value {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .dashboard-section {
+      padding: 1rem;
+    }
+
+    .dashboard-card {
+      padding: 0.8rem;
+    }
+
+    .icon-container {
+      width: 40px;
+      height: 40px;
+    }
+
+    .icon {
+      font-size: 1.2rem;
+    }
+
+    .label {
+      font-size: 0.8rem;
+    }
+
+    .value {
+      font-size: 1.2rem;
+    }
+
+    .extra {
+      font-size: 0.7rem;
+    }
+  }

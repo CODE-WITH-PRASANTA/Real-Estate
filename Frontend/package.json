@@ -10,7 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^6.4.4",
+    "@mui/material": "^6.4.4",
     "@react-google-maps/api": "^2.20.5",
+    "@toolpad/core": "^0.12.0",
     "font-awesome": "^4.7.0",
     "framer-motion": "^12.0.6",
     "leaflet": "^1.9.4",
