@@ -1,0 +1,319 @@
+/* General Container */
+.Propertydetails-desc-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1500px;
+    margin: auto;
+  }
+  
+  /* Left Section */
+  .Propertydetails-desc-details {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Property Description */
+  .Propertydetails-desc-description {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Propertydetails-desc-description h2 {
+    font-size: 26px;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .Propertydetails-desc-description p {
+    color: #666;
+    font-size: 16px;
+    line-height: 1.8;
+  }
+  
+  .Propertydetails-desc-view-more {
+    display: inline-block;
+    margin-top: 15px;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .Propertydetails-desc-view-more:hover {
+    color: #0056b3;
+    text-decoration: underline;
+  }
+ /* Overview Section */
+.Propertydetails-desc-overview {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .Propertydetails-desc-overview h3 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .Propertydetails-desc-overview h3::after {
+    content: "";
+    width: 70px;
+    height: 3px;
+    background: #007bff;
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 10px;
+  }
+  
+  /* Overview Grid */
+  .Propertydetails-desc-overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+  }
+  
+  /* Overview Item */
+  .Propertydetails-desc-overview-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: linear-gradient(135deg, #f8f9fa, #eef1f5);
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  }
+  
+  .Propertydetails-desc-overview-item:hover {
+    background: linear-gradient(135deg, #e9f2ff, #dceeff);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0, 123, 255, 0.15);
+  }
+  
+  /* Overview Icons */
+  .Propertydetails-desc-icon {
+    font-size: 22px;
+    color: #007bff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .Propertydetails-desc-overview-item:hover .Propertydetails-desc-icon {
+    transform: scale(1.2);
+    color: #0056b3;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .Propertydetails-desc-overview {
+      padding: 25px;
+    }
+  
+    .Propertydetails-desc-overview-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Propertydetails-desc-overview-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .Propertydetails-desc-overview-item {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+  
+  /* Contact Sellers Section */
+.Propertydetails-desc-contact-sellers {
+    width: 30%;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .Propertydetails-desc-contact-sellers h3 {
+    font-size: 24px;
+    color: #222;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    position: relative;
+  }
+  
+  .Propertydetails-desc-contact-sellers h3::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #007bff;
+    display: block;
+    margin: 8px auto 0;
+    border-radius: 10px;
+  }
+  
+  /* Seller Information */
+  .Propertydetails-desc-seller-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .Propertydetails-desc-seller-img {
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .Propertydetails-desc-seller-img:hover {
+    transform: scale(1.1);
+  }
+  
+  .Propertydetails-desc-seller-info h4 {
+    font-size: 18px;
+    color: #222;
+    font-weight: 600;
+  }
+  
+  .Propertydetails-desc-seller-info p {
+    font-size: 14px;
+    color: #555;
+    margin: 2px 0;
+  }
+  
+  /* Contact Form */
+  .Propertydetails-desc-contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .Propertydetails-desc-input,
+  .Propertydetails-desc-textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+    background: #f8f9fa;
+    font-weight: 500;
+  }
+  
+  .Propertydetails-desc-input:focus,
+  .Propertydetails-desc-textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    background: #fff;
+  }
+  
+  .Propertydetails-desc-textarea {
+    height: 100px;
+    resize: none;
+  }
+  
+  /* Submit Button */
+  .Propertydetails-desc-button {
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    color: #fff;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .Propertydetails-desc-button:hover {
+    background: linear-gradient(45deg, #0056b3, #003f8a);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 91, 187, 0.3);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .Propertydetails-desc-contact-sellers {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Propertydetails-desc-seller-info {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .Propertydetails-desc-seller-img {
+      width: 90px;
+      height: 90px;
+    }
+  
+    .Propertydetails-desc-button {
+      width: 100%;
+    }
+  }
+  
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .Propertydetails-desc-container {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .Propertydetails-desc-details,
+    .Propertydetails-desc-contact-sellers {
+      width: 100%;
+    }
+  
+    .Propertydetails-desc-overview-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .Propertydetails-desc-overview-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  
+    .Propertydetails-desc-description p,
+    .Propertydetails-desc-overview-item {
+      font-size: 14px;
+    }
+  
+    .Propertydetails-desc-button {
+      font-size: 14px;
+    }
+  }
+  

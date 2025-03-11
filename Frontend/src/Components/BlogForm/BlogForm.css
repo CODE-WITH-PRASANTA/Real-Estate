@@ -110,18 +110,6 @@
     font-weight: bold;
   }
   
-  .blog-editing-sec-submit-btn {
-    width: 100%;
-    background-color: #28a745;
-    color: #ffffff;
-    padding: 14px 0;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-  }
   
   /* Additional Styling for Small Screens */
   @media (max-width: 768px) {

@@ -165,6 +165,12 @@
     vertical-align: middle;
 }
 
+.all-property-link {
+    text-decoration: none; /* Removes the underline */
+    color: inherit; /* Ensures the text color remains consistent */
+    display: block; /* Ensures it behaves as a block element */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .all-property-card {

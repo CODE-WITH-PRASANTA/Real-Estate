@@ -1,0 +1,296 @@
+/* General Styles */
+.Post-Property-Container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Post-Property-Heading {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form Styling */
+  .Post-Property-Form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .property-form-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .property-field {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .property-field label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+  }
+  
+  .property-field input,
+  .property-field textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s ease-in-out;
+  }
+  
+  .property-field input:focus,
+  .property-field textarea:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  .property-field textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  @media (max-width: 1024px) {
+    .property-form-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .property-form-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Sidebar Container */
+.property-sidebars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  /* Sidebar Sections */
+  .property-sidebar {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+  }
+  
+  /* Sidebar Headings */
+  .property-sidebar h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+    border-bottom: 2px solid #28a745;
+    padding-bottom: 5px;
+  }
+  
+  /* Amenities & Features */
+  .amenity-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .add-amenity-btn {
+    width: 100%;
+    padding: 10px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .add-amenity-btn:hover {
+    background: #218838;
+  }
+  
+  /* Nearby Section */
+  .nearby-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .nearby-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .nearby-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .nearby-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Seller & Media Uploads */
+  .seller-label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .seller-input, .file-upload {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* File Upload Styling */
+  .file-upload {
+    margin-top: 10px;
+    background: #f8f9fa;
+    padding: 10px;
+  }
+  
+  /* Submit Button */
+  .Post-Property-Submit {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .Post-Property-Submit:hover {
+    background: #0056b3;
+  }
+
+  /* Responsive Design */
+
+/* Large Tablets & Small Laptops (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .property-form-container,
+    .property-sidebars {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  
+    .property-sidebar {
+      padding: 15px;
+    }
+  
+    .Post-Property-Heading {
+      font-size: 24px;
+    }
+  }
+  
+  /* Tablets (max-width: 768px) */
+  @media (max-width: 768px) {
+    .property-form-container,
+    .property-sidebars {
+      grid-template-columns: 1fr;
+    }
+  
+    .Post-Property-Container {
+      padding: 15px;
+    }
+  
+    .property-field input,
+    .property-field textarea,
+    .seller-input,
+    .file-upload,
+    .nearby-input,
+    .amenity-input {
+      font-size: 14px;
+      padding: 10px;
+    }
+  
+    .property-sidebar h3 {
+      font-size: 16px;
+    }
+  
+    .Post-Property-Submit {
+      font-size: 16px;
+      padding: 10px;
+    }
+  }
+  
+  /* Mobile (max-width: 480px) */
+  @media (max-width: 480px) {
+    .Post-Property-Heading {
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+  
+    .property-form-container,
+    .property-sidebars {
+      gap: 15px;
+    }
+  
+    .property-field label {
+      font-size: 13px;
+    }
+  
+    .property-field input,
+    .property-field textarea,
+    .seller-input,
+    .file-upload,
+    .nearby-input,
+    .amenity-input {
+      font-size: 12px;
+      padding: 8px;
+    }
+  
+    .property-sidebar h3 {
+      font-size: 15px;
+    }
+  
+    .Post-Property-Submit {
+      font-size: 14px;
+      padding: 10px;
+    }
+  }
+  
+  /* Choose Category Section */
+.category-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .category-label {
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  

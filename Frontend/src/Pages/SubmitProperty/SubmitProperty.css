@@ -1,0 +1,33 @@
+/* Style for the submit button */
+.Main-submit-button {
+    background-color: #E94e77; /* Primary color for the button */
+    color: white;              /* Text color */
+    width: 50%;                /* Make the button width 50% of the container */
+    margin-top: 20px;          /* Top margin for spacing */
+    margin-bottom: 20px;       /* Bottom margin for spacing */
+    padding: 12px 24px;        /* Add padding for a better look */
+    border: none;              /* Remove the default border */
+    border-radius: 8px;        /* Slightly round the corners */
+    font-size: 18px;           /* Increase font size */
+    cursor: pointer;          /* Change cursor to a pointer */
+    display: block;            /* Ensure the button is a block element */
+    margin-left: auto;         /* Automatically adjust the left margin */
+    margin-right: auto;        /* Automatically adjust the right margin */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    text-align: center;        /* Ensure the text is centered */
+    box-sizing: border-box;    /* Include padding and borders in width/height calculations */
+  }
+
+  /* Focus effect to highlight the button when selected */
+  .Main-submit-button:focus {
+    outline: none;              /* Remove default outline */
+    box-shadow: 0 0 0 4px rgba(233, 78, 119, 0.3); /* Custom focus outline */
+  }
+  
+  /* Optional: Style when the button is disabled */
+  .Main-submit-button:disabled {
+    background-color: #ccc;     /* Light gray color when disabled */
+    cursor: not-allowed;        /* Change cursor to not-allowed */
+    transform: none;            /* Remove any transformation */
+  }
+  

@@ -1,128 +1,116 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import "./PropertiesandOthers.css";
+import { API_URL } from '../../Api';
 
-// Assets
-import firstPropertyImg from "../../assets/property-img-1.jpg";
-import firstPropertySecondImg from "../../assets/property-img-2.jpg";
-import firstPropertyThirdImg from "../../assets/property-img-3.jpg";
 
-import secondPropertyImg from "../../assets/2ndproperty-img-2.jpg";
-import secondPropertySecondImg from "../../assets/2ndproperty-img-3.jpg";
-import secondPropertyThirdImg from "../../assets/2ndproperty-img.jpg";
+const fetchProperties = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/properties/properties`); // Use API_URL
+    console.log("API Response:", response.data); // Debugging
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching properties:", error);
+    return []; // Avoid undefined issues
+  }
+};
 
-import thirdPropertyImg from "../../assets/3rdproperty-img-2.jpg";
-import thirdPropertySecondImg from "../../assets/3rdproperty-img-3.jpg";
-import thirdPropertyThirdImg from "../../assets/3rdproperty=img.jpg";
 
-import profilepic from "../../assets/profile-pic.png";
+const truncateText = (text, wordLimit) => {
+  if (!text) return "";
+  const words = text.split(" ");
+  return words.length > wordLimit ? words.slice(0, wordLimit).join(" ") + "..." : text;
+};
 
 const PropertiesandOthers = () => {
-  const properties = [
-    {
-      id: 1,
-      title: "Mountain Cottage",
-      description: "A beautiful and peaceful cottage in the mountains.",
-      price: "$650,000",
-      area: "240m²",
-      beds: 4,
-      baths: 3,
-      location: "Condos - Queens",
-      images: [firstPropertyImg, firstPropertySecondImg, firstPropertyThirdImg],
-      author: "Steve Parker",
-    },
-    {
-      id: 2,
-      title: "Green House",
-      description: "An eco-friendly house surrounded by nature.",
-      price: "$2,200/month",
-      area: "150m²",
-      beds: 2,
-      baths: 2,
-      location: "Condos - The Bronx",
-      images: [secondPropertyImg, secondPropertySecondImg, secondPropertyThirdImg],
-      author: "Sophia Turner",
-    },
-    {
-      id: 3,
-      title: "White Studio Loft",
-      description: "A modern and stylish loft in the city.",
-      price: "$550,000",
-      area: "250m²",
-      beds: 4,
-      baths: 3,
-      location: "Apartments - Queens",
-      images: [thirdPropertyImg, thirdPropertySecondImg, thirdPropertyThirdImg],
-      author: "Liam Johnson",
-    },
-  ];
-
+  const [properties, setProperties] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const propertiesPerPage = 12;
+
+  useEffect(() => {
+    const fetchPropertiesData = async () => {
+      const data = await fetchProperties();
+      setProperties(data || []); // Handle undefined response
+    };
+    fetchPropertiesData();
+  }, []);
+
   const indexOfLastProperty = currentPage * propertiesPerPage;
   const indexOfFirstProperty = indexOfLastProperty - propertiesPerPage;
-  const currentProperties = properties.slice(indexOfFirstProperty, indexOfLastProperty);
+  const currentProperties = properties?.length
+    ? properties.slice(indexOfFirstProperty, indexOfLastProperty)
+    : [];
 
-  const totalPages = Math.ceil(properties.length / propertiesPerPage);
+  const totalPages = Math.ceil((properties?.length || 0) / propertiesPerPage);
 
   return (
     <div className="all-properties-container">
-      <h2 className="all-section-title">Featured Properties</h2>
-      <div className="all-properties-grid">
-        {currentProperties.map((property) => (
-          <div className="all-property-card" key={property.id}>
-            <div className="all-property-image-wrapper">
-              <Swiper modules={[Pagination]} pagination={{ clickable: true }}>
-                {property.images.map((image, index) => (
-                  <SwiperSlide key={index}>
-                    <img src={image} alt={`${property.title} - ${index + 1}`} className="all-property-image" />
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-              <span className="all-property-badge">For Sale</span>
-            </div>
-            <div className="all-property-details">
-              <div className="all-property-header">
-                <img src={profilepic} alt={property.author} className="all-property-author-img" />
-                <span className="all-property-author">{property.author}</span>
+    <h2 className="all-section-title">Featured Properties</h2>
+    <div className="all-properties-grid">
+      {currentProperties.length > 0 ? (
+        currentProperties.map((property) => (
+          <div className="all-property-card" key={property._id}>
+            <Link to={`/property/${property._id}`} className="all-property-link">
+              <div className="all-property-image-wrapper">
+                <Swiper modules={[Pagination]} pagination={{ clickable: true }}>
+                  {property.galleryImages.map((image, index) => (
+                    <SwiperSlide key={index}>
+                      <img src={image} alt={`${property.title} - ${index + 1}`} className="all-property-image" />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+                <span className="all-property-badge">{property.category}</span>
               </div>
-              <span className="all-property-location">{property.location}</span>
-              <h3 className="all-property-title">{property.title}</h3>
-              <p className="all-property-description">{property.description}</p>
-              <div className="all-property-footer">
-                <span className="all-property-price">{property.price}</span>
-                <div className="all-property-info">
-                  <span>{property.area}</span>
-                  <span>{property.beds} Beds</span>
-                  <span>{property.baths} Baths</span>
+              <div className="all-property-details">
+                <div className="all-property-header">
+                  <img src={property.sellerPhoto} alt={property.sellerName} className="all-property-author-img" />
+                  <span className="all-property-author">{property.sellerName}</span>
+                </div>
+                <span className="all-property-location">{property.location}</span>
+                <h3 className="all-property-title">{property.title}</h3>
+                <p className="all-property-description">
+                  {truncateText(property.description, 10)}
+                </p>
+                <div className="all-property-footer">
+                  <span className="all-property-price">₹ {property.price}</span>
+                  <div className="all-property-info">
+                    <span>{property.squareFeet} ft²</span>
+                    <span>{property.bedrooms} Beds</span>
+                    <span>{property.bathrooms} Baths</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           </div>
-        ))}
-      </div>
-      {/* Pagination */}
-      <div className="all-pagination">
-        <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
-          Prev
-        </button>
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            className={currentPage === index + 1 ? "active" : ""}
-            onClick={() => setCurrentPage(index + 1)}
-          >
-            {index + 1}
-          </button>
-        ))}
-        <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>
-          Next
-        </button>
-      </div>
+        ))
+      ) : (
+        <p>No properties found.</p>
+      )}
     </div>
+    {/* Pagination */}
+    <div className="all-pagination">
+      <button disabled={currentPage === 1} onClick={() => setCurrentPage(currentPage - 1)}>
+        Prev
+      </button>
+      {Array.from({ length: totalPages }, (_, index) => (
+        <button
+          key={index + 1}
+          className={currentPage === index + 1 ? "active" : ""}
+          onClick={() => setCurrentPage(index + 1)}
+        >
+          {index + 1}
+        </button>
+      ))}
+      <button disabled={currentPage === totalPages} onClick={() => setCurrentPage(currentPage + 1)}>
+        Next
+      </button>
+    </div>
+  </div>
   );
 };
 

@@ -13,15 +13,15 @@ import Property6 from '../../assets/Property-6.jpg';
 import ProfilePic from '../../assets/profile-pic.png';
 
 const properties = [
-  { id: 1, img: Property1, category: 'Apartment' },
+  { id: 1, img: Property1, category: 'Agricultural land' },
   { id: 2, img: Property2, category: 'Villa' },
   { id: 3, img: Property3, category: 'Studio' },
-  { id: 4, img: Property4, category: 'House' },
-  { id: 5, img: Property5, category: 'Office' },
-  { id: 6, img: Property6, category: 'Apartment' },
+  { id: 4, img: Property4, category: 'Non Agricultural land' },
+  { id: 5, img: Property5, category: 'Residental Plot' },
+  { id: 6, img: Property6, category: 'Agricultural land' },
 ];
 
-const categories = ['All', 'Apartment', 'Villa', 'Studio', 'House', 'Office'];
+const categories = ['All', 'Agricultural land', 'Non Agricultural land', 'Residental Plot', 'Commercial Plot', 'Industrial Plot' , 'Shop / Office' , 'Weakend Villa' , 'Wearhouse' , 'Hotel Rent' , 'Resturant' , 'House Rent'];
 
 const Discoverproperties = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');

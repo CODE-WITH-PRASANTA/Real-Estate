@@ -1,23 +1,39 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./UploadMediaPage.css";
 
-const UploadMediaPage = () => {
+const UploadMediaPage = ({ onChange }) => {
   const [photos, setPhotos] = useState([]);
+
+  useEffect(() => {
+    // Trigger when 'photos' changes to send data to parent
+    onChange({ photos });
+  }, [photos, onChange]);
 
   const handlePhotoUpload = (event) => {
     const files = Array.from(event.target.files);
-    const newPhotos = files.slice(0, 10 - photos.length); // Limit to 10 photos
-    const photoUrls = newPhotos.map((file) => URL.createObjectURL(file));
-    setPhotos((prevPhotos) => [...prevPhotos, ...photoUrls]);
+    const newPhotos = files.slice(0, Math.max(10 - photos.length, 0)).map((file) => ({
+      file,
+      url: URL.createObjectURL(file), // Generate a preview URL for each file
+    }));
+
+    if (newPhotos.length === 0) {
+      alert("You can upload up to 10 photos only.");
+      return;
+    }
+
+    setPhotos((prevPhotos) => [...prevPhotos, ...newPhotos]); // Store file objects with preview URLs
   };
 
   const handleDeletePhoto = (index) => {
-    setPhotos((prevPhotos) => prevPhotos.filter((_, i) => i !== index));
+    setPhotos((prevPhotos) => {
+      // Revoke the object URL to release memory
+      URL.revokeObjectURL(prevPhotos[index].url);
+      return prevPhotos.filter((_, i) => i !== index);
+    });
   };
 
   return (
     <div className="upload-media-page">
-      {/* Upload Section */}
       <div className="upload-section">
         <h2>Upload Media</h2>
         <div className="upload-box">
@@ -38,7 +54,7 @@ const UploadMediaPage = () => {
           {photos.map((photo, index) => (
             <div key={index} className="photo-container">
               <img
-                src={photo}
+                src={photo.url}
                 alt={`Uploaded ${index}`}
                 className="uploaded-photo"
               />
@@ -52,88 +68,6 @@ const UploadMediaPage = () => {
           ))}
         </div>
       </div>
-
-      {/* Information Section */}
-      <div className="info-section">
-        <h2 className="info-title">Information</h2>
-        <form className="info-form">
-          {/* Title */}
-          <div className="info-form-group info-title-group">
-            <label className="info-label">Title*</label>
-            <input
-              className="info-input"
-              type="text"
-              placeholder="Enter title"
-              required
-            />
-          </div>
-
-          {/* Description */}
-          <div className="info-form-group info-description-group">
-            <label className="info-label">Description</label>
-            <textarea
-              className="info-textarea"
-              placeholder="Enter description"
-            ></textarea>
-          </div>
-
-          {/* Address Section */}
-          <div className="info-form-row">
-            <div className="info-form-group info-address-group">
-              <label className="info-label">Full Address*</label>
-              <input
-                className="info-input"
-                type="text"
-                placeholder="Enter full address"
-                required
-              />
-            </div>
-            <div className="info-form-group info-zipcode-group">
-              <label className="info-label">Zip Code*</label>
-              <input
-                className="info-input"
-                type="text"
-                placeholder="Enter zip code"
-                required
-              />
-            </div>
-            <div className="info-form-group info-country-group">
-              <label className="info-label">Country*</label>
-              <input
-                className="info-input"
-                type="text"
-                value="United States"
-                readOnly
-              />
-            </div>
-          </div>
-
-          {/* State, Location, and Neighborhood */}
-          <div className="info-form-row">
-            <div className="info-form-group info-state-group">
-              <label className="info-label">Province/State*</label>
-              <select className="info-select">
-                <option value="">Select</option>
-                <option value="California">California</option>
-                <option value="Texas">Texas</option>
-              </select>
-            </div>
-            <div className="info-form-group info-location-group">
-              <label className="info-label">Location*</label>
-              <select className="info-select">
-                <option value="">Select</option>
-              </select>
-            </div>
-            <div className="info-form-group info-neighborhood-group">
-              <label className="info-label">Neighborhood*</label>
-              <select className="info-select">
-                <option value="">Select</option>
-              </select>
-            </div>
-          </div>
-        </form>
-      </div>
-
     </div>
   );
 };

@@ -15,7 +15,8 @@
 }
 
 .category-buttons {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     justify-content: center;
     gap: 12px;
     margin-bottom: 25px;

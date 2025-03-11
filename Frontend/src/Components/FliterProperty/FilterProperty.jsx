@@ -28,15 +28,22 @@ const FilterProperty = () => {
       <div className="filter-bar">
         <select className="filter-select">
           <option>Type</option>
-          <option>Buy</option>
-          <option>Rent</option>
+          <option> Sell</option>
+          <option> Rent</option>
         </select>
         <select className="filter-select">
           <option>Category</option>
-          <option>Apartment</option>
-          <option>Properties</option>
-          <option>House</option>
-          <option>Villas</option>
+          <option>Agricultural land</option>
+          <option>Non Agricultural land</option>
+          <option>Residental Plot</option>
+          <option>Commercial Plot</option>
+          <option>Industrial Plot</option>
+          <option>Shop / Office</option>
+          <option>Weakend Villa</option>
+          <option>Wearhouse</option>
+          <option>Hotel Rent</option>
+          <option>Resturant</option>
+          <option>House Rent</option>
         </select>
         <select className="filter-select">
           <option>Location</option>

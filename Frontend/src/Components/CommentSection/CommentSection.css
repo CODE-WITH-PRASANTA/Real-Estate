@@ -1,0 +1,188 @@
+/* Main Container */
+.comment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1500px;
+    margin: auto;
+    padding: 40px 20px;
+    gap: 30px;
+  }
+  
+  /* Comment Content Section */
+  .comment-content {
+    flex: 2;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+  }
+  
+  /* Title */
+  .comment-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 10px;
+  }
+  
+  /* Subtitle */
+  .comment-note {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 20px;
+  }
+  
+  /* Form Styling */
+  .comment-form {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Row for Name & Email */
+  .comment-row {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .comment-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .comment-group label {
+    font-size: 15px;
+    font-weight: 600;
+    color: #444;
+    margin-bottom: 6px;
+  }
+  
+  /* Input & Textarea Styling */
+  .comment-group input,
+  .comment-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    color: #333;
+    outline: none;
+    transition: border 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    background: #f8f9fc;
+  }
+  
+  .comment-group input::placeholder,
+  .comment-group textarea::placeholder {
+    color: #999;
+  }
+  
+  .comment-group input:focus,
+  .comment-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  /* Textarea Styling */
+  .comment-group textarea {
+    min-height: 130px;
+    resize: vertical;
+  }
+  
+  /* Button Styling */
+  .comment-btn {
+    background: linear-gradient(135deg, #007bff, #0056eb);
+    color: #fff;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 14px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .comment-btn:hover {
+    background: linear-gradient(135deg, #0056eb, #0041c4);
+    box-shadow: 0 4px 10px rgba(0, 86, 235, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  /* Aside Section - Why Choose Us */
+  .comment-why-choose-us {
+    flex: 1;
+    background: #007bff;
+    color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    height: fit-content;
+    transition: transform 0.3s ease-in-out;
+  }
+  .aside-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 5px;
+  }
+  
+  .comment-why-choose-us ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .comment-why-choose-us li {
+    font-size: 17px;
+    font-weight: 500;
+    margin: 12px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .comment-why-choose-us li:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 800px) {
+    .comment-container {
+      flex-direction: column;
+    }
+  
+    .comment-why-choose-us {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .comment-row {
+      flex-direction: column;
+      gap: 12px;
+    }
+  
+    .comment-title {
+      font-size: 24px;
+    }
+  
+    .comment-btn {
+      font-size: 15px;
+      padding: 12px;
+    }
+  }
+  

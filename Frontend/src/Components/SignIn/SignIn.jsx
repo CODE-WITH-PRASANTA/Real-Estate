@@ -125,7 +125,7 @@ const SignIn = () => {
               </button>
             </div>
             <p className="signin-register">
-              Don’t have an account? <a href="#">Register</a>
+              Don’t have an account? <a href="/register">Register</a>
             </p>
           </form>
         </div>

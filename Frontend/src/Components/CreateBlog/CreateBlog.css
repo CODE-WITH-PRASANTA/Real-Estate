@@ -114,6 +114,7 @@
     width: 100%;
     padding: 12px;
     font-size: 14px;
+    background-color: white;
     border: 1px solid #ccc;
     border-radius: 6px;
     margin-top: 5px;
@@ -268,4 +269,20 @@
     font-weight: bold;
     color: #444;
     margin-bottom: 10px;
+  }
+
+
+  
+  .blog-editing-sec-submit-btn {
+    width: 50%;
+    margin: auto;
+    background-color: #28a745;
+    color: #ffffff;
+    padding: 14px 0;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
   }

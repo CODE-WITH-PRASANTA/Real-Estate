@@ -1,0 +1,206 @@
+/* Container styling */
+.PropertyDetails-Heading-container {
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 10px;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Header section */
+.PropertyDetails-Heading-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.PropertyDetails-Heading-title {
+    font-size: 26px;
+    font-weight: 700;
+    color: #333;
+}
+
+.PropertyDetails-Heading-price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #e94e77;
+}
+
+.PropertyDetails-Heading-price .price-unit {
+    font-size: 14px;
+    font-weight: normal;
+    color: #777;
+}
+
+/* Divider */
+.PropertyDetails-Heading-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 15px 0;
+}
+
+/* Info section */
+.PropertyDetails-Heading-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Features styling */
+.PropertyDetails-Heading-features {
+    display: flex;
+    gap: 24px;
+}
+
+.PropertyDetails-Heading-features span {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #444;
+}
+
+.PropertyDetails-Heading-icon {
+    color: #e94e77;
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+/* Location styling */
+.PropertyDetails-Heading-location {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #444;
+}
+
+/* Actions section */
+.PropertyDetails-Heading-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.PropertyDetails-Heading-button {
+    background: #f8f8f8;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.PropertyDetails-Heading-button:hover {
+    background: #e94e77;
+    color: #fff;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .PropertyDetails-Heading-container {
+        padding: 20px;
+    }
+    
+    .PropertyDetails-Heading-title {
+        font-size: 24px;
+    }
+    
+    .PropertyDetails-Heading-price {
+        font-size: 20px;
+    }
+    
+    .PropertyDetails-Heading-features {
+        gap: 16px;
+    }
+    
+    .PropertyDetails-Heading-button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .PropertyDetails-Heading-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .PropertyDetails-Heading-info {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+    }
+    
+    .PropertyDetails-Heading-features {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+    
+    .PropertyDetails-Heading-actions {
+        justify-content: flex-end;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .PropertyDetails-Heading-container {
+        padding: 16px;
+    }
+
+    .PropertyDetails-Heading-title {
+        font-size: 22px;
+    }
+
+    .PropertyDetails-Heading-price {
+        font-size: 18px;
+    }
+
+    .PropertyDetails-Heading-features {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 10px;
+    }
+
+    .PropertyDetails-Heading-button {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+@media (max-width: 576px) {
+    .PropertyDetails-Heading-container {
+        padding: 12px;
+    }
+
+    .PropertyDetails-Heading-title {
+        font-size: 20px;
+    }
+
+    .PropertyDetails-Heading-price {
+        font-size: 16px;
+    }
+
+    .PropertyDetails-Heading-info {
+        font-size: 14px;
+    }
+
+    .PropertyDetails-Heading-features span {
+        font-size: 14px;
+    }
+
+    .PropertyDetails-Heading-button {
+        font-size: 12px;
+        padding: 6px;
+    }
+}

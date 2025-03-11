@@ -1,0 +1,211 @@
+/* General Styles */
+.register-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: auto;
+    background: linear-gradient(to right, #e94e77 50%, #ffffff 50%);
+    padding: 40px;
+    font-family: 'Arial', sans-serif;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 2px solid rgb(0, 0, 0);
+}
+
+/* Left and Right Section Styling */
+.register-sec-left,
+.register-sec-right {
+    margin: auto;
+    width: 48%;
+    padding: 30px;
+    border-radius: 12px;
+    background: #fff;
+    margin-right: 2%;
+}
+
+/* Styling for Left Section */
+.register-sec-left {
+    background: #e94e77;
+    color: #fff;
+    border-radius: 10px 0 0 10px;
+}
+
+/* Styling for Right Section */
+.register-sec-right {
+    background: #ffffff;
+    color: #333;
+    border-radius: 0 10px 10px 0;
+    margin-right: 0;
+}
+
+/* Section Titles */
+.register-sec-title {
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #e94e77; /* Adds a subtle underline to section titles */
+}
+
+
+.left-sec-title{
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+/* Input Fields Styling */
+.register-sec-input {
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background: transparent;
+    color: inherit;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box; /* Ensures padding does not affect the width */
+}
+
+/* Left Section Input Styling */
+.register-sec-left .register-sec-input {
+    background: rgba(255, 255, 255, 0.2);
+    color: #000000;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Placeholder Styling for Left Section */
+.register-sec-left .register-sec-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Right Section Input Styling */
+.register-sec-right .register-sec-input {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+/* Focus Effect on Inputs */
+.register-sec-input:focus {
+    border-color: #e94e77;
+    box-shadow: 0px 0px 10px rgba(233, 78, 119, 0.5);
+    background: #fff;
+}
+
+/* Input Group (for two input fields side by side) */
+.register-sec-input-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.register-sec-input-group input {
+    width: 48%; /* Ensures inputs sit side by side */
+    box-sizing: border-box;
+}
+
+/* Terms and Conditions */
+.register-sec-terms-container {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 15px;
+    justify-content: center;
+    gap: 5px;
+    color: #333;
+}
+
+.register-sec-checkbox {
+    margin-right: 10px;
+}
+
+.register-sec-terms-container a {
+    color: #e94e77;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.register-sec-terms-container a:hover {
+    text-decoration: underline;
+}
+
+/* Button Styling */
+.register-sec-button {
+    width: 100%;
+    padding: 14px;
+    background: #e94e77;
+    border: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Button shadow */
+}
+
+/* Button Hover Effect */
+.register-sec-button:hover {
+    background: #d43f67;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .register-sec-left,
+    .register-sec-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    
+    .register-sec-input-group input {
+        width: 100%;
+    }
+
+    .register-sec-button {
+        font-size: 16px;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .register-sec-left,
+    .register-sec-right {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .register-sec-input-group {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .register-sec-input-group input {
+        width: 100%;
+    }
+
+    .register-sec-button {
+        width: 100%;
+    }
+}
