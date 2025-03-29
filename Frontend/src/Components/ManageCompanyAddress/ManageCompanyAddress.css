@@ -1,0 +1,196 @@
+/* Container styling */
+.Manage-company-address-container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Title styling */
+.Manage-company-address-title {
+    text-align: center;
+    color: #222;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+.Manage-company-address-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.Manage-company-address-form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Manage-company-address-form-group label {
+    font-weight: bold;
+    color: #444;
+}
+
+.Manage-company-address-form-group input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.Manage-company-address-form-group input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Submit Button */
+.Manage-company-address-submit-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 14px;
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.Manage-company-address-submit-btn:hover {
+    background-color: #218838;
+}
+
+/* Table styling */
+.Manage-company-address-table-container {
+    margin-top: 30px;
+}
+
+.Manage-company-address-table-title {
+    text-align: center;
+    font-size: 22px;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.Manage-company-address-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.Manage-company-address-table th,
+.Manage-company-address-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: center;
+}
+
+.Manage-company-address-table th {
+    background: #007bff;
+    color: white;
+}
+
+.Manage-company-address-table-row:hover {
+    background: #f8f9fa;
+}
+
+/* Image styling */
+.Manage-company-address-office-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+/* Action Buttons */
+.Manage-company-address-edit-btn,
+.Manage-company-address-delete-btn {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.Manage-company-address-edit-btn {
+    background: #ffc107;
+    color: white;
+    margin-right: 5px;
+}
+
+.Manage-company-address-delete-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.Manage-company-address-edit-btn:hover {
+    background: #e0a800;
+}
+
+.Manage-company-address-delete-btn:hover {
+    background: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Manage-company-address-container {
+        padding: 15px;
+    }
+
+    .Manage-company-address-title {
+        font-size: 22px;
+    }
+
+    .Manage-company-address-form-group input {
+        font-size: 14px;
+    }
+
+    .Manage-company-address-submit-btn {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .Manage-company-address-table th,
+    .Manage-company-address-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .Manage-company-address-office-image {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Manage-company-address-title {
+        font-size: 20px;
+    }
+
+    .Manage-company-address-form-group input {
+        font-size: 12px;
+        padding: 8px;
+    }
+
+    .Manage-company-address-submit-btn {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .Manage-company-address-table th,
+    .Manage-company-address-table td {
+        font-size: 12px;
+        padding: 6px;
+    }
+
+    .Manage-company-address-edit-btn,
+    .Manage-company-address-delete-btn {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+}

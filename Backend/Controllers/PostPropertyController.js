@@ -1,3 +1,4 @@
+const express = require("express");
 const PostProperty = require("../models/PostProperty");
 const cloudinary = require("../Config/cloudinaryConfig");
 
@@ -13,7 +14,7 @@ exports.createProperty = async (req, res) => {
       nearby, category, sellerName, sellerEmail, sellerPhone, youtubeLink
     } = req.body;
 
-    // Check if property with same propertyID already exists
+    // Check if property with the same propertyID already exists
     const existingProperty = await PostProperty.findOne({ propertyID });
     if (existingProperty) {
       return res.status(400).json({ error: "Property with same propertyID already exists" });
@@ -53,7 +54,6 @@ exports.createProperty = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
-
 // Get all properties
 exports.getAllProperties = async (req, res) => {
   try {
@@ -63,7 +63,6 @@ exports.getAllProperties = async (req, res) => {
     res.status(500).json({ error: "Error fetching properties" });
   }
 };
-
 // Get property by ID
 exports.getPropertyById = async (req, res) => {
   try {
@@ -76,18 +75,78 @@ exports.getPropertyById = async (req, res) => {
     res.status(500).json({ error: "Error fetching property details" });
   }
 };
-
-// Get properties by category (For Sale / For Rent)
-exports.getPropertiesByCategory = async (req, res) => {
+// Update property by ID
+exports.updateProperty = async (req, res) => {
   try {
-    const { category } = req.query;
-    if (!category || !["For Sale", "For Rent"].includes(category)) {
-      return res.status(400).json({ error: "Invalid or missing category" });
+    const { id } = req.params;
+    const { 
+      choosingType, choosingCategory, puttingLocation, choosingBestValue 
+    } = req.body;
+
+    // Find the property by ID
+    const property = await PostProperty.findById(id);
+    if (!property) {
+      return res.status(404).json({ error: "Property not found" });
+    }
+    if (choosingType) property.choosingType = choosingType;
+    if (choosingCategory) property.choosingCategory = choosingCategory;
+    if (puttingLocation) property.puttingLocation = puttingLocation;
+    if (choosingBestValue) property.choosingBestValue = choosingBestValue;
+
+    // Save the updated property
+    await property.save();
+    
+    res.status(200).json({ message: "Property updated successfully", updatedProperty: property });
+  } catch (error) {
+    console.error("Error updating property:", error);
+    res.status(500).json({ error: "Error updating property" });
+  }
+};
+// Delete property by ID
+exports.deleteProperty = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deletedProperty = await PostProperty.findByIdAndDelete(id);
+    if (!deletedProperty) {
+      return res.status(404).json({ message: "Property not found" });
     }
 
-    const properties = await PostProperty.find({ category });
-    res.status(200).json(properties);
+    res.json({ message: "Property deleted successfully" });
   } catch (error) {
-    res.status(500).json({ error: "Error filtering properties" });
+    res.status(500).json({ message: "Error deleting property", error });
+  }
+};
+exports.filterProperties = async (req, res) => {
+  try {
+    const { choosingType, choosingCategory, puttingLocation } = req.query;
+
+    let query = {};
+    if (choosingType) {
+      query.choosingType = { $regex: choosingType, $options: "i" }; // Case-insensitive partial match
+    }
+    if (choosingCategory) {
+      query.choosingCategory = { $regex: choosingCategory, $options: "i" };
+    }
+    if (puttingLocation) {
+      query.puttingLocation = { $regex: puttingLocation, $options: "i" };
+    }
+
+    console.log("Filtering properties with query:", query);
+
+    const filteredProperties = await PostProperty.find(query);
+    res.status(200).json(filteredProperties);
+  } catch (error) {
+    console.error("Error filtering properties:", error);
+    res.status(500).json({ message: "Error filtering properties", error: error.message });
+  }
+};
+// Get all categories
+exports.getCategories = async (req, res) => {
+  try {
+    const categories = await PostProperty.distinct("choosingCategory");
+    res.status(200).json(categories);
+  } catch (error) {
+    console.error("Error fetching categories:", error);
+    res.status(500).json({ error: "Error fetching categories" });
   }
 };

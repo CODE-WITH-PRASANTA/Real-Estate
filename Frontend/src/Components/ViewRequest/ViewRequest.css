@@ -1,156 +1,163 @@
 /* Container */
 .view-req-container {
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 30px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 30px auto;
+  max-width: 95%;
+}
+
+/* Heading */
+.view-req-heading {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+}
+
+/* Table Container */
+.view-req-table-container {
+  width: 100%;
+  overflow-x: auto; /* Enables table scrolling */
+  border-radius: 8px;
+}
+
+/* Table */
+.view-req-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 5px;
+  min-width: 1200px; /* Ensures table scrolling on small screens */
+  table-layout: auto;
+}
+
+.view-req-table-header {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.view-req-table th, 
+.view-req-table td {
+  padding: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+/* Status Styles */
+.status-approved {
+  color: green;
+  font-weight: bold;
+}
+
+.status-pending {
+  color: red;
+  font-weight: bold;
+}
+
+/* Alternating row colors */
+.view-req-table-body tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.view-req-table-body tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Action Buttons */
+.view-req-action-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.view-req-action-buttons button {
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.view-req-approve-btn {
+  background-color: #28a745;
+  color: white;
+}
+
+.view-req-delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.view-req-action-buttons button:hover {
+  opacity: 0.8;
+}
+
+/* Additional Information Section */
+.view-req-additional-info {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.view-req-additional-info h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #007bff;
+}
+
+.view-req-additional-info p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .view-req-container {
+    padding: 15px;
   }
-  
-  /* Heading */
+
   .view-req-heading {
-    text-align: center;
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 30px;
-    color: #333;
-    text-transform: uppercase;
+    font-size: 24px;
   }
-  
-  /* Table */
-  .view-req-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 5px;
-    table-layout: fixed;
+
+  .view-req-table-container {
     overflow-x: auto;
   }
-  
-  .view-req-table-header {
-    background-color: #4CAF50;
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    text-transform: uppercase;
+
+  .view-req-table {
+    min-width: 900px;
   }
-  
-  .view-req-table th, .view-req-table td {
-    color: black;
-    padding: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 600;
-    border: 1px solid #ddd;
-    text-align: center;
-    word-wrap: break-word;
+}
+
+@media screen and (max-width: 480px) {
+  .view-req-heading {
+    font-size: 20px;
   }
-  
-  .view-req-table-body tr:nth-child(even) {
-    background-color: #f9f9f9;
+
+  .view-req-action-buttons {
+    display: flex;
+    flex-direction: column;
   }
-  
-  .view-req-table-body tr:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Action buttons */
+
   .view-req-action-buttons button {
-    padding: 10px 15px;
-    margin: 5px;
-    font-size: 14px;
-    font-weight: 600;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s ease;
+    width: 100%;
+    margin: 5px 0;
   }
-  
-  .view-req-approve-btn {
-    background-color: #4CAF50;
-    color: white;
+
+  .view-req-table {
+    min-width: 800px;
   }
-  
-  .view-req-deny-btn {
-    background-color: #FF5722;
-    color: white;
-  }
-  
-  .view-req-delete-btn {
-    background-color: #f44336;
-    color: white;
-  }
-  
-  .view-req-action-buttons button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Hover effect for table row */
-  .view-req-table-row {
-    transition: background-color 0.3s ease;
-  }
-  
-  .view-req-table-row:hover {
-    background-color: #f1f1f1;
-  }
-  
-  /* Responsive Styling (Mobile View) */
-  @media screen and (max-width: 768px) {
-    .view-req-container {
-      padding: 15px;
-    }
-  
-    .view-req-heading {
-      font-size: 24px;
-    }
-  
-    .view-req-table {
-      display: block;
-      overflow-x: auto;
-      white-space: nowrap;
-    }
-  
-    .view-req-table th,
-    .view-req-table td {
-      white-space: nowrap;
-      text-align: left;
-    }
-  
-    .view-req-action-buttons {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-  
-    .view-req-action-buttons button {
-      padding: 10px 12px;
-      font-size: 12px;
-      width: 100%;
-      margin-bottom: 10px;
-    }
-  }
-  
-  /* Smaller Screen (Mobile Landscape) */
-  @media screen and (max-width: 480px) {
-    .view-req-heading {
-      font-size: 20px;
-    }
-  
-    .view-req-action-buttons button {
-      font-size: 12px;
-      padding: 8px 12px;
-    }
-  
-    .view-req-table th, .view-req-table td {
-      padding: 10px;
-    }
-  
-    .view-req-action-buttons {
-      flex-direction: column;
-    }
-  
-    .view-req-action-buttons button {
-      width: 100%;
-      margin: 5px 0;
-    }
-  }
-  
-  
+}

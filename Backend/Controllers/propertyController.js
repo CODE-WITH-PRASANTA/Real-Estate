@@ -31,10 +31,6 @@ const uploadPhotosToCloudinary = async (files) => {
     throw new Error('Cloudinary upload failed');
   }
 };
-
-
-
-
 const createProperty = async (req, res) => {
   try {
     console.log("Received files:", req.files); // Debugging line
@@ -60,7 +56,6 @@ const createProperty = async (req, res) => {
     res.status(500).json({ success: false, message: 'Server Error' });
   }
 };
-
 const getProperties = async (req, res) => {
   try {
     const properties = await Property.find();
@@ -70,10 +65,6 @@ const getProperties = async (req, res) => {
     res.status(500).json({ success: false, message: 'Server Error' });
   }
 };
-
-
-
-
 const deletePhotosFromCloudinary = async (urls) => {
   try {
     const deletePromises = urls.map((url) => {
@@ -88,7 +79,6 @@ const deletePhotosFromCloudinary = async (urls) => {
     throw new Error('Cloudinary deletion failed');
   }
 };
-
 const deleteProperty = async (req, res) => {
   try {
     const propertyId = req.params.id;
@@ -113,9 +103,5 @@ const deleteProperty = async (req, res) => {
     res.status(500).json({ success: false, message: 'Server Error' });
   }
 };
-
-
-
-
 
 module.exports = { createProperty, getProperties , deleteProperty };

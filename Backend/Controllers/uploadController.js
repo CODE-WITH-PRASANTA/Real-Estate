@@ -23,7 +23,6 @@ const uploadPhotos = async (req, res) => {
     });
   }
 };
-
 // Delete handler
 const deletePhoto = async (req, res) => {
     const { publicId } = req.body; // Get the public_id from request body
@@ -53,6 +52,5 @@ const deletePhoto = async (req, res) => {
       });
     }
   };
-  
 
 module.exports = { uploadPhotos, deletePhoto };

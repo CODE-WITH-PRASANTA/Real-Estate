@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useState } from "react";
 import "./CreateBlog.css";
 import axios from "axios";
 import BlogForm from "../BlogForm/BlogForm";
+import { API_URL } from "../../Api"; // Import API_URL
 
 // Lazy load TinyMCE Editor for better performance
 const Editor = lazy(() => import("@tinymce/tinymce-react").then((module) => ({ default: module.Editor })));
@@ -15,13 +16,13 @@ const CreateBlog = () => {
     category: "",
     tags: [],
   });
+
   const [file, setFile] = useState(null);
   const [previewUrl, setPreviewUrl] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
-  // Handle file drop for drag and drop image upload
   const handleDrop = (event) => {
     event.preventDefault();
     const uploadedFile = event.dataTransfer.files[0];
@@ -31,7 +32,6 @@ const CreateBlog = () => {
     }
   };
 
-  // Handle file selection via input field
   const handleFileChange = (event) => {
     const uploadedFile = event.target.files[0];
     if (uploadedFile) {
@@ -43,31 +43,31 @@ const CreateBlog = () => {
   const handleFormData = (data) => {
     setFormData((prevData) => ({
       ...prevData,
-      ...data, // Merge new data with existing formData
+      ...data, 
     }));
   };
-  
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("Submitting Form Data:", formData); // Debugging Step
+    console.log("Submitting Form Data:", formData);
     setIsLoading(true);
     setError(null);
     setSuccess(false);
-  
+
     const formDataToSend = new FormData();
-    formDataToSend.append("title", formData.title || "Untitled"); // Ensure default values
+    formDataToSend.append("title", formData.title || "Untitled");
     formDataToSend.append("description", formData.description || "No description provided");
-    formDataToSend.append("content", formData.content || ""); // Avoid undefined content
+    formDataToSend.append("content", formData.content || "");
     formDataToSend.append("authorName", formData.authorName || "Anonymous");
     formDataToSend.append("category", formData.category.trim() ? formData.category : "Uncategorized");
     formDataToSend.append("tags", formData.tags.length > 0 ? formData.tags.join(",") : "General");
     formDataToSend.append("image", file);
-  
+
     try {
-      const response = await axios.post("http://localhost:5000/api/blogs/create", formDataToSend, {
+      const response = await axios.post(`${API_URL}/blogs/create`, formDataToSend, {
         headers: { "Content-Type": "multipart/form-data" },
       });
-  
+
       if (response.status === 201) {
         console.log("Blog successfully posted:", response.data);
         setSuccess(true);
@@ -79,7 +79,6 @@ const CreateBlog = () => {
       setIsLoading(false);
     }
   };
-  
 
   return (
     <>

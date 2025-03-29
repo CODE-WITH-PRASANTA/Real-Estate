@@ -10,8 +10,9 @@ import HowToRegIcon from '@mui/icons-material/HowToReg';
 import HomeWorkIcon from '@mui/icons-material/HomeWork';
 import SupervisorAccountIcon from '@mui/icons-material/SupervisorAccount';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import PostAddIcon from '@mui/icons-material/PostAdd'; // Icon for Post Property
-import EditLocationIcon from '@mui/icons-material/EditLocation'; // Icon for Edit Property
+import PostAddIcon from '@mui/icons-material/PostAdd';
+import EditLocationIcon from '@mui/icons-material/EditLocation';
+import ContactsIcon from '@mui/icons-material/Contacts'; // FIXED: Added missing import
 import { AppProvider } from '@toolpad/core/AppProvider';
 import { DashboardLayout } from '@toolpad/core/DashboardLayout';
 import { PageContainer } from '@toolpad/core/PageContainer';
@@ -21,11 +22,18 @@ import EditBlog from '../../Components/EditBlog/EditBlog';
 import BlogList from '../../Components/BlogList/BlogList';
 import ViewRequest from '../../Components/ViewRequest/ViewRequest';
 import ViewProperties from '../../Components/ViewPorperties/ViewProperties';
-import PostProperty from '../../Components/PostProperty/PostProperty'; // Import PostProperty Component
-import EditProperty from '../../Components/EditProperty/EditProperty'; // Import EditProperty Component
+import PostProperty from '../../Components/PostProperty/PostProperty';
 import AgentApproval from '../../Components/AgentApproval/AgentApproval';
 import SubAgentApproval from '../../Components/SubAgentApproval/SubAgentApproval';
+import AdminEditProperty from '../../Components/AdminEditProperty/AdminEditProperty';
+import AdminAgreeculture from '../../Components/AdminAgreeculture/AdminAgreeculture';
+import AddAgent from '../../Components/AddAgent/AddAgent';
+import ManageAgents from '../../Components/ManageAgents/ManageAgents';
+import ManageCompanyAddress from '../../Components/ManageCompanyAddress/ManageCompanyAddress';
+import ManageColdLeads from '../../Components/ManageColdLeads.jsx/ManageColdLeads';
 import './AdminNavbar.css';
+import AdminAgreecultureEditProperty from '../../Components/AdminAgreecultureEditProperty/AdminAgreecultureEditProperty';
+
 
 // Define navigation data with colorful icons
 const NAVIGATION = [
@@ -84,11 +92,6 @@ const NAVIGATION = [
         title: 'View Requests',
         icon: <HowToRegIcon style={{ color: '#8bc34a' }} />,
       },
-      {
-        segment: 'approve',
-        title: 'Approve Request',
-        icon: <HowToRegIcon style={{ color: '#ff9800' }} />,
-      },
     ],
   },
   {
@@ -118,8 +121,20 @@ const NAVIGATION = [
         title: 'Edit Property',
         icon: <EditLocationIcon style={{ color: '#ff5722' }} />,
       },
+      {
+        segment: 'post-agriculture',
+        title: 'Post Agriculture Property',
+        icon: <PostAddIcon style={{ color: '#8bc34a' }} />,
+      },
+      {
+        segment: 'edit-land-property',
+        title: 'Edit Land Property',
+        icon: <EditLocationIcon style={{ color: '#ff9800' }} />,
+      },
     ],
   },
+  
+  
   {
     kind: 'divider',
   },
@@ -144,6 +159,58 @@ const NAVIGATION = [
       },
     ],
   },
+  {
+    kind: 'divider',
+  },
+  {
+    kind: 'header',
+    title: "Manage Agents",
+  },
+  {
+    segment: 'manage-agents',
+    title: 'Agent Management',
+    icon: <SupervisorAccountIcon style={{ color: '#673ab7' }} />,
+    children: [
+      {
+        segment: 'add-agent',
+        title: 'Add Agent',
+        icon: <PersonAddIcon style={{ color: '#4caf50' }} />,
+      },
+      {
+        segment: 'manage-agents-list',
+        title: 'Manage Agents',
+        icon: <GroupAddIcon style={{ color: '#ff5722' }} />,
+      },
+    ],
+  },
+
+  {
+    kind: 'divider',
+  },
+  {
+    kind: 'header',
+    title: 'Company Management',
+  },
+  {
+    segment: 'manage-company-address',
+    title: 'Manage Company Address',
+    icon: <HomeWorkIcon style={{ color: '#ff9800' }} />,
+  },
+
+  {
+    kind: 'divider',
+  },
+  {
+    kind: 'header',
+    title: 'Manage Cold Leads',
+  },
+  {
+    segment: 'manage-cold-leads',
+    title: 'Cold Lead Contacts',
+    icon: <ContactsIcon style={{ color: '#ff9800' }} />,
+  },
+  
+  
 ];
 
 // Custom theme configuration
@@ -216,9 +283,16 @@ export default function DashboardLayoutBasic({ window }) {
             {router.pathname === '/admin-requests/view' && <ViewRequest />}
             {router.pathname === '/property-management/view' && <ViewProperties />}
             {router.pathname === '/property-management/post' && <PostProperty />}
-            {router.pathname === '/property-management/edit' && <EditProperty />}
+            {router.pathname === '/property-management/post-agriculture' && <AdminAgreeculture />}
+            {router.pathname === '/property-management/edit' && <AdminEditProperty />}
+            {router.pathname === '/property-management/edit-land-property' && <AdminAgreecultureEditProperty />}
             {router.pathname === '/approval-section/agent-approval' && <AgentApproval />}
             {router.pathname === '/approval-section/subagent-approval' && <SubAgentApproval />}
+            {router.pathname === '/manage-agents/add-agent' && <AddAgent />}
+            {router.pathname === '/manage-agents/manage-agents-list' && <ManageAgents />}
+            {router.pathname === '/manage-company-address' && <ManageCompanyAddress />}
+            {router.pathname === '/manage-cold-leads' && <ManageColdLeads />}
+
           </PageContainer>
         </DashboardLayout>
       </AppProvider>

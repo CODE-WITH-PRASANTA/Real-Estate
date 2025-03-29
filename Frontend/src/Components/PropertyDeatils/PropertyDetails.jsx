@@ -7,6 +7,7 @@ import PropertyDetailsDescription from "../PropertyDetailsDescription/PropertyDe
 import PropertyDetailsMoreAbout from "../PropertyDetailsMoreAbout/PropertyDetailsMoreAbout";
 import WhatIsNearBy from "../WhatIsNearBy/WhatIsNearBy";
 import CommentSection from "../CommentSection/CommentSection";
+import AgreeculturePropertyDetailsGallery from "../AgreeculturePropertyDetailsGallery/AgreeculturePropertyDetailsGallery";
 
 const PropertyDetails = () => {
   const { id } = useParams(); // Extracting id from the URL
@@ -14,7 +15,7 @@ const PropertyDetails = () => {
   return (
     <div>
       <PropertyDetailsHeading />
-      <PropertyDetailsGallery />
+      <AgreeculturePropertyDetailsGallery />
       <PropertyDetailsDescription />
       <PropertyDetailsMoreAbout />
       <WhatIsNearBy />

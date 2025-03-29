@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { API_URL } from "../../Api"; // Import the API base URL
 import "./BlogSection.css";
 
 const BlogSection = () => {
@@ -9,7 +10,7 @@ const BlogSection = () => {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/blogs/blogs"); // Adjust API URL if needed
+        const response = await axios.get(`${API_URL}/blogs/blogs`);
         setBlogs(response.data);
       } catch (error) {
         console.error("Error fetching blogs:", error);

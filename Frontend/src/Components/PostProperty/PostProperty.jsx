@@ -7,6 +7,7 @@ import { API_URL } from '../../Api';
 
 const PostProperty = () => {
   const [amenities, setAmenities] = useState([]);
+
   const [nearby, setNearby] = useState({
     school: '',
     hospital: '',
@@ -57,7 +58,6 @@ const PostProperty = () => {
     setNearby({ ...nearby, [e.target.name]: e.target.value });
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
@@ -106,8 +106,6 @@ const PostProperty = () => {
       });
   };
 
-
-  
   return (
     <div className="Post-Property-Container">
 

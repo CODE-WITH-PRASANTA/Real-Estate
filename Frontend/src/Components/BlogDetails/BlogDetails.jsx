@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import DOMPurify from "dompurify"; // To sanitize HTML content
+import { API_URL } from "../../Api"; // Import the API base URL
 import "./BlogDetails.css";
 
 const BlogDetails = () => {
@@ -14,7 +15,7 @@ const BlogDetails = () => {
     useEffect(() => {
         const fetchBlog = async () => {
             try {
-                const response = await axios.get(`http://localhost:5000/api/blogs/blogs/${id}`);
+                const response = await axios.get(`${API_URL}/blogs/blogs/${id}`);
                 setBlog(response.data);
                 setLoading(false);
             } catch (err) {

@@ -46,6 +46,11 @@ const Navbar = () => {
             </a>
           </li>
           <li>
+            <a href="/agreculture">
+              <FiHeart className="nav-icon" /> Land's
+            </a>
+          </li>
+          <li>
             <a href= "/service">
               <FiLayers className="nav-icon" /> Our Services
             </a>
@@ -104,6 +109,11 @@ const Navbar = () => {
           <li>
             <a href="/property">
               <FiHeart className="nav-icon" /> Properties
+            </a>
+          </li>
+          <li>
+            <a href="/agreculture">
+              <FiHeart className="nav-icon" /> Land's
             </a>
           </li>
           <li>

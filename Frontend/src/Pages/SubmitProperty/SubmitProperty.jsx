@@ -6,6 +6,8 @@ import AdditionalInformation from '../../Components/AdditionalInformation/Aditio
 import FlourInformation from '../../Components/FlourInformtion/FlourInformation';
 import OwnerInformation from '../../Components/OwnerInformation/OwnerInformation';
 import AdminInformation from '../../Components/AdminInformation/AdminInformation';
+import { API_URL } from '../../Api'; // Import API_URL
+
 
 const SubmitProperty = () => {
   const [propertyData, setPropertyData] = useState({
@@ -63,7 +65,7 @@ const SubmitProperty = () => {
       formData.append('adminInfo', JSON.stringify(propertyData.adminInfo));
   
       // Make API request
-      const response = await axios.post('http://localhost:5000/api/properties', formData, {
+      const response = await axios.post(`${API_URL}/properties`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
   

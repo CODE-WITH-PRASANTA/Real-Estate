@@ -1,12 +1,15 @@
 const express = require("express");
 const router = express.Router();
+const upload = require("../Config/multer-config");
 const { 
   createProperty, 
   getAllProperties, 
   getPropertyById, 
-  getPropertiesByCategory 
+  updateProperty, 
+  deleteProperty ,
+  filterProperties,
+  getCategories
 } = require("../Controllers/PostPropertyController");
-const upload = require("../Config/multer-config");
 
 // Create a property
 router.post(
@@ -21,7 +24,20 @@ router.get("/properties", getAllProperties);
 // Get a property by ID
 router.get("/property/:id", getPropertyById);
 
-// Get properties by category (For Sale / For Rent)
-router.get("/properties/filter", getPropertiesByCategory);
+// Update property by ID
+router.put("/properties/:id", updateProperty);
+
+// Delete property by ID
+router.delete("/properties/:id", deleteProperty);
+
+// Route for filtering properties
+router.get("/filter", filterProperties);
+
+
+// Get all categories
+router.get("/categories", getCategories);
+
+
+
 
 module.exports = router;

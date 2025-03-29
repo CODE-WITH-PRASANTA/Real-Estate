@@ -31,6 +31,13 @@ const PostPropertySchema = new mongoose.Schema({
   sellerPhone: { type: String, required: true },
   sellerPhoto: { type: String, required: true },
   youtubeLink: { type: String },
+
+
+  choosingType: { type: String}, // New field
+  choosingCategory: { type: String }, // New field
+  puttingLocation: { type: String }, // New field
+  choosingBestValue: { type: String }, // New field
+
 }, { timestamps: true });
 
 module.exports = mongoose.model("PostProperty", PostPropertySchema);

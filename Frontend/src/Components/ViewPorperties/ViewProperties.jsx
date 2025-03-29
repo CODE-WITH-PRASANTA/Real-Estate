@@ -3,48 +3,42 @@ import axios from 'axios';
 import './ViewProperties.css';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
+import { API_URL } from '../../Api'; // Adjust the path if needed
+
 
 const ViewProperties = () => {
   const [properties, setProperties] = useState([]);
 
-  useEffect(() => {
-    const fetchProperties = async () => {
-      try {
-        const response = await axios.get('http://localhost:5000/api/view');
-        if (response.data.success) {
-          setProperties(response.data.data || []);
-        } else {
-          console.error('Error: Failed to fetch properties');
-        }
-      } catch (error) {
-        console.error('Error fetching properties:', error.message);
-      }
-    };
 
-    fetchProperties();
-  }, []);
-
-  const deleteProperty = async (propertyId) => {
-    if (!window.confirm('Are you sure you want to deny and delete this property?')) {
-      return;
+const fetchProperties = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/view`);
+    if (response.data.success) {
+      setProperties(response.data.data || []);
+    } else {
+      console.error('Error: Failed to fetch properties');
     }
+  } catch (error) {
+    console.error('Error fetching properties:', error.message);
+  }
+};
 
-    try {
-      const response = await axios.delete(`http://localhost:5000/api/view/${propertyId}`);
-      if (response.data.success) {
-        alert('Property deleted successfully.');
-        setProperties((prevProperties) =>
-          prevProperties.filter((property) => property._id !== propertyId)
-        );
-      } else {
-        console.error('Error deleting property:', response.data.message);
-        alert('Failed to delete the property.');
-      }
-    } catch (error) {
-      console.error('Error deleting property:', error.message);
-      alert('An error occurred while deleting the property.');
+const deleteProperty = async (propertyId) => {
+  try {
+    const response = await axios.delete(`${API_URL}/view/${propertyId}`);
+    if (response.data.success) {
+      alert('Property deleted successfully.');
+      setProperties((prevProperties) =>
+        prevProperties.filter((property) => property._id !== propertyId)
+      );
+    } else {
+      alert('Failed to delete the property.');
     }
-  };
+  } catch (error) {
+    alert('An error occurred while deleting the property.');
+  }
+};
+
 
   const downloadImagesAsZip = async (images, propertyId) => {
     if (!images || images.length === 0) {

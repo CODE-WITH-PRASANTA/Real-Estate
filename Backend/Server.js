@@ -7,16 +7,23 @@ const uploadRoutes = require("./routes/uploadRoutes");
 const propertyRoutes = require("./routes/propertyRoutes");
 const blogRoutes = require("./routes/blogRoutes");
 const postpropertyRoutes = require('./routes/PostPropertyRoutes');
+const PostAgreecultureRoutes = require('./routes/PostAgreecultureRoutes');
+const errorHandler = require("./middleware/errorMiddleware");
+const userRoutes = require("./routes/userRoutes");
+const authRoutes = require("./routes/agentRoutes");
+const protectedRoutes = require("./routes/protectedRoutes");
+const teamMemberRoutes = require("./routes/teamMemberRoutes");
+const companyAddressRoutes = require("./routes/companyAddressRoutes");
+const phoneRoutes = require('./routes/phoneRoutes');
+
 
 
 dotenv.config();
 connectDB();
 
-const app = express(); // ✅ Declare app first
-
-// Middleware
-app.use(express.json()); // ✅ This is required for parsing JSON data
-app.use(express.urlencoded({ extended: true })); // ✅ This is required for parsing form data
+const app = express(); 
+app.use(express.json()); //
+app.use(express.urlencoded({ extended: true })); 
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -29,7 +36,27 @@ app.use("/api/media", uploadRoutes);
 app.use('/api', propertyRoutes);
 
 app.use("/api/blogs", blogRoutes);
+
 app.use('/api/properties', postpropertyRoutes);
+app.use('/api/agreecultureproperties', PostAgreecultureRoutes);
+
+// Routes
+app.use("/api/users", userRoutes);
+
+app.use("/api/auth", authRoutes);
+app.use("/api/protected", protectedRoutes);
+
+app.use("/api/team", teamMemberRoutes);
+
+// Routes
+app.use("/api/company-address", companyAddressRoutes);
+
+app.use('/api/managephone', phoneRoutes);
+
+
+
+// Error Middleware
+app.use(errorHandler);
 
 
 // Start the Server
