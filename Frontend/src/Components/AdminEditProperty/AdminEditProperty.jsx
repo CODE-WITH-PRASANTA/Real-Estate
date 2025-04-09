@@ -118,11 +118,6 @@ const handleUpdate = async (id, updatedData) => {
                   </td>
                   <td>
                     <select id={`category-${property._id}`} defaultValue={property.propertyType} className="AdminEdit-Property-Select">
-                      <option>Agricultural land</option>
-                      <option>Non-Agricultural land</option>
-                      <option>Residential Plot</option>
-                      <option>Commercial Plot</option>
-                      <option>Industrial Plot</option>
                       <option>Shop / Office</option>
                       <option>Weekend Villa</option>
                       <option>Warehouse</option>

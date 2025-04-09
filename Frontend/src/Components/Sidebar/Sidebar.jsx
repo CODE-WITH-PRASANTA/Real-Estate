@@ -2,8 +2,18 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./Sidebar.css";
-import { FaBars, FaTimes, FaClipboardList, FaSignOutAlt } from "react-icons/fa";
-import { API_URL } from "../../Api"; // Ensure correct API import
+import {
+  FaBars,
+  FaTimes,
+  FaClipboardList,
+  FaSignOutAlt,
+  FaUser,
+  FaHome,
+  FaPlusCircle,
+  FaBuilding,
+  FaUsers,
+} from "react-icons/fa";
+import { API_URL } from "../../Api";
 
 const Sidebar = () => {
   const location = useLocation();
@@ -30,38 +40,63 @@ const Sidebar = () => {
     fetchRole();
   }, []);
 
-  // Logout function
   const handleLogout = () => {
     localStorage.removeItem("token");
-    localStorage.removeItem("userRole");
     navigate("/login");
   };
 
-  // Ensure Sidebar only loads for Agents
-  if (userRole !== "Agent") {
-    return null; // Hide Sidebar for non-agents
-  }
+  if (userRole !== "Agent") return null;
 
   return (
     <>
-      {/* Sidebar Toggle Button */}
       <button className="menu-button" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? <FaTimes /> : <FaBars />}
       </button>
 
-      <div className={`sidebar-container ${isOpen ? "open" : ""}`}>
-        {/* Navigation Sections */}
+      <aside className={`sidebar-container ${isOpen ? "open" : ""}`}>
+        <h3 className="sidebar-heading">Agent Dashboard</h3>
+
         <nav className="sidebar-nav">
-          <Link to="/agentdashboard" className={location.pathname === "/agentdashboard" ? "sidebar-active" : ""}>
-            <FaClipboardList /> Dashboard
+          <Link
+            to="/agent-dashboard"
+            className={location.pathname === "/agent-dashboard" ? "sidebar-active" : ""}
+          >
+            <FaHome /> Dashboard
+          </Link>
+
+          <Link
+            to="/agent-dashboard/profile"
+            className={location.pathname === "/agent-dashboard/profile" ? "sidebar-active" : ""}
+          >
+            <FaUser /> My Profile
+          </Link>
+
+          <Link
+            to="/agent-dashboard/properties"
+            className={location.pathname === "/agent-dashboard/properties" ? "sidebar-active" : ""}
+          >
+            <FaBuilding /> My Properties
+          </Link>
+
+          <Link
+            to="/agent-dashboard/add-property"
+            className={location.pathname === "/agent-dashboard/add-property" ? "sidebar-active" : ""}
+          >
+            <FaPlusCircle /> Add Property
+          </Link>
+
+          <Link
+            to="/agent-dashboard/subagents"
+            className={location.pathname === "/agent-dashboard/subagents" ? "sidebar-active" : ""}
+          >
+            <FaUsers /> Subagents
           </Link>
         </nav>
 
-        {/* Logout Button */}
         <button className="sidebar-logout" onClick={handleLogout}>
           <FaSignOutAlt /> Logout
         </button>
-      </div>
+      </aside>
     </>
   );
 };

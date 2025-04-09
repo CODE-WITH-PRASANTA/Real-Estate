@@ -28,6 +28,8 @@ import { API_URL } from "./Api";  // Ensure proper import of API_URL
 import AgreecultureProperties from "./Pages/AgreecultureProperties/AgreecultureProperties";
 import AgreeculturePropertyDetails from "./Components/AgreeculturePropertyDetails/AgreeculturePropertyDetails";
 import AdminLogin from "./AdminPannel/AdminLogin/AdminLogin";
+import AgentLayout from "./Components/AgentLayout/AgentLayout";
+import AgentProfile from "./Components/AgentProfile/AgentProfile";
 
 const ScrollToTop = () => {
     const { pathname } = useLocation();
@@ -125,12 +127,32 @@ const App = () => {
                         {/* Protected Routes */}
                         <Route
                             path="/agent-dashboard"
-                            element={<ProtectedRoute element={<AgentDashboard />} allowedRoles={["Agent"]} />}
-                        />
-                        <Route
-                            path="/subagent-dashboard"
-                            element={<ProtectedRoute element={<SubagentDashboard />} allowedRoles={["Subagent"]} />}
-                        />
+                            element={
+                                <ProtectedRoute
+                                allowedRoles={["Agent"]}
+                                element={
+                                    <AgentLayout>
+                                    <AgentDashboard />
+                                    </AgentLayout>
+                                }
+                                />
+                            }
+                            />
+
+                            <Route
+                            path="/agent-dashboard/profile"
+                            element={
+                                <ProtectedRoute
+                                allowedRoles={["Agent"]}
+                                element={
+                                    <AgentLayout>
+                                    <AgentProfile />
+                                    </AgentLayout>
+                                }
+                                />
+                            }
+                            />
+
                     </Routes>
                     {showFooter && <Footer />}
                     {showFloatingButton && <FloatingCallButton />}

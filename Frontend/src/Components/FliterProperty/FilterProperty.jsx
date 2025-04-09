@@ -58,11 +58,6 @@ const FilterProperty = ({ onFilter }) => {
 
                 <select className="filter-select" value={choosingCategory} onChange={(e) => setChoosingCategory(e.target.value)}>
                     <option value="">Category</option>
-                    <option value="Agricultural land">Agricultural land</option>
-                    <option value="Non Agricultural land">Non Agricultural land</option>
-                    <option value="Residential Plot">Residential Plot</option>
-                    <option value="Commercial Plot">Commercial Plot</option>
-                    <option value="Industrial Plot">Industrial Plot</option>
                     <option value="Shop / Office">Shop / Office</option>
                     <option value="Weekend Villa">Weekend Villa</option>
                     <option value="Warehouse">Warehouse</option>

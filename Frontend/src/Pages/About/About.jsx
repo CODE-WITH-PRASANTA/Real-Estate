@@ -2,8 +2,8 @@ import React from 'react'
 import './About.css'
 import AboutMission from '../../Components/Mission/AboutMission'
 import WhyChooseUs from '../../Components/WhyChooseUs/WhyChooseUs'
-import AboutAgent from '../../Components/AboutAgent/AboutAgent'
 import ClientFeedBack from '../../Components/ClientFeedback/ClientFeedBack'
+import MeetOurAgent from '../../Components/MeetOurAgent/MeetOurAgent'
 
 
 
@@ -20,7 +20,7 @@ const About = () => {
     </div>
 <AboutMission />
 <WhyChooseUs />
-<AboutAgent />
+<MeetOurAgent />
 <ClientFeedBack />
     </>
   )
